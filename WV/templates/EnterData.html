@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% block EnterData %}
+    {% if username %}
+  <h3>Enter the Word2Vec model parameters</h3>
+    <form  enctype="multipart/form-data" role="form" class="" action="{% url 'EnterData' %}" method="post">
+    {%  csrf_token %}
+        <div class="form-group">
+             <label>Vector size:</label>
+            <input class="form-control" {{ form.Data_size}}
+        </div>
+
+        <div class="form-group ">
+
+        <label>Window size:</label><br>
+            <input class="form-control" {{ form.Data_win }} </div>
+         <div class="form-group ">
+
+        <label>Minimal count of words:</label><br>
+            <input class="form-control" {{ form.Data_minc }} </div>
+        <div class="form-group ">
+ <div id="upskr" class="row">
+
+        <div class="col-lg-3"> <span id="skrepka"><img  src="{% static "skrepka.png "%}"width="40px" height="40px"> Upload a file</span> <span class=""></span></br>
+        <span id="upload" hidden="">{{ form.Data_xls}}</span>
+        </div>
+            <div class="col-lg-4"><input class="btn btn-primary btn-md" role="button" type="submit" value="Add" size="100px"></div> </div></div>
+    </form>
+    <script type="text/javascript" src="{% static "fileupload.js "%}"></script>
+    {% else %}
+     <h3>Please log in or <a href="{%  url 'register'%}">register</a> if you don't have an account</h3>
+    {% endif %}
+
+{% endblock %}
