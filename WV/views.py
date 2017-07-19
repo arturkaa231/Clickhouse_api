@@ -16,10 +16,9 @@ import xlwt
 import os.path
 import numpy as np
 import matplotlib.pyplot as plt
-from bokeh.models.glyphs import Text
 from bokeh.plotting import figure, show, output_file
-from bokeh.models import ColumnDataSource, Range1d, LabelSet, Label,CustomJS
-from bokeh.models import HoverTool, CustomJS
+from bokeh.models import ColumnDataSource, Range1d, LabelSet, Label
+from bokeh.models import CustomJS,TapTool,LassoSelectTool
 from bokeh.models.widgets import TextInput
 import random
 from WV.models import Data
@@ -36,7 +35,6 @@ def mainPage(request):
         #form.article_auth=auth.get_user(request).username
 
         if form.is_valid():
-
             form.save()
             def Map(a, size, win, minc):
                 def clean(text):
@@ -44,7 +42,6 @@ def mainPage(request):
                         text = text.replace(i, '')
 
                     return text
-
                 # считывание словаря с xls
                 def ReadXls(xls):
                     wb = xlrd.open_workbook(os.path.join(xls))
@@ -132,29 +129,45 @@ def mainPage(request):
 
                 # запись векторов и словаря в xls
                 WriteXls(a)
-                # построение карты слов
+                # построение карты слов c помощью matplotlib
                 # BuildWordMap()
 
                 # формирование графика в html
-                s1 = ColumnDataSource(data=dict(x=list(X[:, 0]), y=list(X[:, 1]), words=list(model.wv.vocab.keys())))
+                s1 = ColumnDataSource(data=dict(x=list(X[:, 0]), y=list(X[:, 1]), words=list(model.wv.vocab.keys()),
+                                                color=['#000000' for i in range(len(list(model.wv.vocab.keys())))]))
+                p1 = figure(tools="pan,lasso_select,wheel_zoom,reset,save,tap", title="Select Here",
+                            plot_width=1500, plot_height=900, x_range=Range1d(-0.1, 0.1))
 
-                p1 = figure(tools="pan,lasso_select,wheel_zoom,undo,reset,save", title="Select Here", plot_width=1600,
-                            plot_height=900, x_range=Range1d(-0.1, 0.1))
-
-                p1.scatter(x='x', y='y', size=0, source=s1)
-                labels = LabelSet(x='x', y='y', text='words', level='glyph',
-                                  x_offset=5, y_offset=5, source=s1, render_mode='canvas')
+                p1.scatter(x='x', y='y', size=10, source=s1, alpha=0,color='white')
+                labels = LabelSet(x='x', y='y', text_color='color', text='words', level='glyph',
+                                  x_offset=-7, y_offset=-7, source=s1, render_mode='canvas')
 
                 citation = Label(x=70, y=70, x_units='screen', y_units='screen',
                                  text='', render_mode='css',
                                  border_line_color='black', border_line_alpha=10.0,
                                  background_fill_color='white', background_fill_alpha=1.0, )
-                # удаление выделенных лассо элементов
+
                 s1.callback = CustomJS(args=dict(s1=s1), code="""
+                                       var inds = cb_obj.selected['1d'].indices;
+                                       var d1 = cb_obj.data;
+                                       for (i = 0; i < inds.length; i++) {
+                                           d1['color'][inds[i]]='#DC143C'
+                                       }
+                                       s1.change.emit();
+                                   """)
+                # удаление выделенных лассо элементов
+                tap = p1.select(type=TapTool)
+                tap.callback = CustomJS(args=dict(s1=s1), code="""
                         var inds = cb_obj.selected['1d'].indices;
                         var d1 = cb_obj.data;
                         for (i = 0; i < inds.length; i++) {
+
                             d1['words'][inds[i]]=''
+                            d1['x'][inds[i]]=-1000
+                            d1['y'][inds[i]]=-1000
+
+
+
                         }
                         s1.change.emit();
                     """)

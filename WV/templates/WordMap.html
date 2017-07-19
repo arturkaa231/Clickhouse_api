@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Bokeh Scatter Plots</title>
+{% extends 'main.html' %}
+{% load staticfiles %}
 
+
+
+{% block  Maphead %}
         <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.css" type="text/css" />
         <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
 
         <!-- COPY/PASTE SCRIPT HERE -->
         {{ script| safe }}
-
-    </head>
-    <body>
+{% endblock %}
+    {% block Mapbody %}
         <!-- INSERT DIVS HERE -->
     {{ div|safe }}
-    </body>
-</html>
+    {% endblock %}
