@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
      "static",'/WV/static/',
 ]
-STATIC_ROOT='/WV/static/'
+
 # путь до папки media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
