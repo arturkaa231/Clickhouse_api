@@ -1,6 +1,7 @@
 from django.forms import ModelForm, fields,forms
 from WV.models import Data
-
+from Word2Vec import settings
+from django.template.defaultfilters import filesizeformat
 class EnterData(ModelForm):
     class Meta:
         model=Data
@@ -8,3 +9,5 @@ class EnterData(ModelForm):
 
     def __str__(self):
         return self.as_div()
+
+  

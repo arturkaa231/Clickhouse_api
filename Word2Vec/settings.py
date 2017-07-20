@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -18,7 +17,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
+TASK_UPLOAD_FILE_TYPES = ['xls']
+TASK_UPLOAD_FILE_MAX_SIZE = "5242880"
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '@%f+@fq)*-7g6t*s0@w(mie#tr6u-7+b-rf5#5svu3^(+3nh6r'
 
@@ -127,7 +127,7 @@ STATICFILES_DIRS = [
      "static",'/WV/static/',
 ]
 
-# путь до папки media
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'  # URL для медии в шаблонах

@@ -43,7 +43,7 @@ def mainPage(request):
                         text = text.replace(i, '')
 
                     return text
-                # считывание словаря с xls
+                # Read words from  xls
                 def ReadXls(xls):
                     wb = xlrd.open_workbook(os.path.join(xls))
                     wb.sheet_names()
@@ -55,7 +55,7 @@ def mainPage(request):
                         WL.append(Load)
                         i += 1
                     return WL
-                # Запись в xls
+                # Write to xls
                 def WriteXls(xls):
                     # rb=xlrd.open_workbook(a)
                     wb = xlwt.Workbook()
@@ -138,14 +138,14 @@ def mainPage(request):
                     script, div = components(p1)
                     args['script'] = script
                     args['div'] = div
-                # параметры  модели
+                # model parametres
                 #a = 'C:/Users/Artur/Desktop/py/Word2Vec/02.xls'
                 #size = 100
                 #win = 10
                 #minc = 10
                 WL = ReadXls(a)
                 W = []
-                # очищаем от знаков припенания и создаем список-словарь
+                # clean from punctuations
                 for i in WL:
                     i = clean(i)
                     W.append(i)
@@ -154,16 +154,16 @@ def mainPage(request):
                     i = i.split(' ')
                     W3.append(i)
 
-                # Создаем модель
+                # Create the model
                 model = Word2Vec(W3, size=size, window=win, min_count=minc)
 
                 X = []
                 for i in model.wv.vocab.keys():
                     X.append(model.wv[i])
                 X = np.array(X)
-                # запись векторов и словаря в xls
+
                 WriteXls(a)
-                # построение карты слов c помощью matplotlib
+                
                 # BuildWordMap()
 
                 BuildHtmlMap()
