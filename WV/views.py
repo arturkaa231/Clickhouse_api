@@ -9,9 +9,7 @@ from django.contrib import auth
 from django.core.paginator import Paginator
 from datetime import datetime,date
 from gensim.models import Word2Vec
-#библиотека для считывания
 import xlrd
-#библиотека для записи
 import xlwt
 import os.path
 import numpy as np
@@ -65,13 +63,13 @@ def mainPage(request):
                     print(model.wv.vocab.keys())
                     ws = wb.get_sheet(0)
                     k = 0
-                    # запись отдельных слов в первый столбец
+
                     for i in model.wv.vocab.keys():
                         ws.write(k, 0, i)
 
                         k += 1
                     k = 0
-                    # запись векторов во сторой столбец
+
                     for i in model.wv.vocab.keys():
                         ws.write(k, 1, str(model.wv[i]))
 
@@ -95,9 +93,9 @@ def mainPage(request):
                         plt.annotate(text, (X[:, 0][i], X[:, 1][i]))
 
                     plt.show()
-                #построение html-карты слов
+
                 def BuildHtmlMap():
-                    # формирование графика в html
+                    #
                     s1 = ColumnDataSource(data=dict(x=list(X[:, 0]), y=list(X[:, 1]), words=list(model.wv.vocab.keys()),
                                                     color=['#000000' for i in range(len(list(model.wv.vocab.keys())))]))
                     p1 = figure(tools="pan,lasso_select,wheel_zoom,reset,save,tap", title="Select Here",
@@ -120,7 +118,7 @@ def mainPage(request):
                                                           }
                                                           s1.change.emit();
                                                       """)
-                    # удаление выделенных лассо элементов
+                    #
                     tap = p1.select(type=TapTool)
                     tap.callback = CustomJS(args=dict(s1=s1), code="""
                                            var inds = cb_obj.selected['1d'].indices;
