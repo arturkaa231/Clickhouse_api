@@ -124,15 +124,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    ( "static",'/Users/Artur/PycharmProjects/Word2Vec/static'),
+     "static",os.path.join(BASE_DIR, "static"),'/WV/static/',
 
 ]
 
-
-
-
-# путь до папки media, в общем случае она пуста в начале
-
+# путь до папки media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'  # URL для медии в шаблонах

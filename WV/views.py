@@ -36,6 +36,7 @@ def mainPage(request):
 
         if form.is_valid():
             form.save()
+            args={}
             def Map(a, size, win, minc):
                 def clean(text):
                     for i in [',', '.', ':', ';', '!', '?']:
@@ -54,7 +55,6 @@ def mainPage(request):
                         WL.append(Load)
                         i += 1
                     return WL
-
                 # Запись в xls
                 def WriteXls(xls):
                     # rb=xlrd.open_workbook(a)
@@ -77,11 +77,8 @@ def mainPage(request):
 
                         k += 1
                     wb.save(xls)
-
                 def BuildWordMap():
-
                     h = .02  # step size in the mesh
-
                     for weights in ['uniform', 'distance']:
                         # we create an instance of Neighbours Classifier and fit the data.
 
@@ -98,23 +95,61 @@ def mainPage(request):
                         plt.annotate(text, (X[:, 0][i], X[:, 1][i]))
 
                     plt.show()
+                #построение html-карты слов
+                def BuildHtmlMap():
+                    # формирование графика в html
+                    s1 = ColumnDataSource(data=dict(x=list(X[:, 0]), y=list(X[:, 1]), words=list(model.wv.vocab.keys()),
+                                                    color=['#000000' for i in range(len(list(model.wv.vocab.keys())))]))
+                    p1 = figure(tools="pan,lasso_select,wheel_zoom,reset,save,tap", title="Select Here",
+                                plot_width=1500, plot_height=900, x_range=Range1d(-0.1, 0.1))
 
+                    p1.scatter(x='x', y='y', size=10, source=s1, alpha=0, color='white')
+                    labels = LabelSet(x='x', y='y', text_color='color', text='words', level='glyph',
+                                      x_offset=-7, y_offset=-7, source=s1, render_mode='canvas')
+
+                    citation = Label(x=70, y=70, x_units='screen', y_units='screen',
+                                     text='', render_mode='css',
+                                     border_line_color='black', border_line_alpha=10.0,
+                                     background_fill_color='white', background_fill_alpha=1.0, )
+
+                    s1.callback = CustomJS(args=dict(s1=s1), code="""
+                                                          var inds = cb_obj.selected['1d'].indices;
+                                                          var d1 = cb_obj.data;
+                                                          for (i = 0; i < inds.length; i++) {
+                                                              d1['color'][inds[i]]='#DC143C'
+                                                          }
+                                                          s1.change.emit();
+                                                      """)
+                    # удаление выделенных лассо элементов
+                    tap = p1.select(type=TapTool)
+                    tap.callback = CustomJS(args=dict(s1=s1), code="""
+                                           var inds = cb_obj.selected['1d'].indices;
+                                           var d1 = cb_obj.data;
+                                           for (i = 0; i < inds.length; i++) {
+
+                                               d1['words'][inds[i]]=''
+                                               d1['x'][inds[i]]=-1000
+                                               d1['y'][inds[i]]=-1000
+                                           }
+                                           s1.change.emit();
+                                       """)
+                    p1.add_layout(labels)
+                    p1.add_layout(citation)
+                    script, div = components(p1)
+                    args['script'] = script
+                    args['div'] = div
                 # параметры  модели
                 #a = 'C:/Users/Artur/Desktop/py/Word2Vec/02.xls'
                 #size = 100
                 #win = 10
                 #minc = 10
-
                 WL = ReadXls(a)
-
                 W = []
                 # очищаем от знаков припенания и создаем список-словарь
                 for i in WL:
                     i = clean(i)
                     W.append(i)
-
                 W3 = []
-
                 for i in W:
                     i = i.split(' ')
                     W3.append(i)
@@ -126,60 +161,13 @@ def mainPage(request):
                 for i in model.wv.vocab.keys():
                     X.append(model.wv[i])
                 X = np.array(X)
-
                 # запись векторов и словаря в xls
                 WriteXls(a)
                 # построение карты слов c помощью matplotlib
                 # BuildWordMap()
 
-                # формирование графика в html
-                s1 = ColumnDataSource(data=dict(x=list(X[:, 0]), y=list(X[:, 1]), words=list(model.wv.vocab.keys()),
-                                                color=['#000000' for i in range(len(list(model.wv.vocab.keys())))]))
-                p1 = figure(tools="pan,lasso_select,wheel_zoom,reset,save,tap", title="Select Here",
-                            plot_width=1500, plot_height=900, x_range=Range1d(-0.1, 0.1))
-
-                p1.scatter(x='x', y='y', size=10, source=s1, alpha=0,color='white')
-                labels = LabelSet(x='x', y='y', text_color='color', text='words', level='glyph',
-                                  x_offset=-7, y_offset=-7, source=s1, render_mode='canvas')
-
-                citation = Label(x=70, y=70, x_units='screen', y_units='screen',
-                                 text='', render_mode='css',
-                                 border_line_color='black', border_line_alpha=10.0,
-                                 background_fill_color='white', background_fill_alpha=1.0, )
-
-                s1.callback = CustomJS(args=dict(s1=s1), code="""
-                                       var inds = cb_obj.selected['1d'].indices;
-                                       var d1 = cb_obj.data;
-                                       for (i = 0; i < inds.length; i++) {
-                                           d1['color'][inds[i]]='#DC143C'
-                                       }
-                                       s1.change.emit();
-                                   """)
-                # удаление выделенных лассо элементов
-                tap = p1.select(type=TapTool)
-                tap.callback = CustomJS(args=dict(s1=s1), code="""
-                        var inds = cb_obj.selected['1d'].indices;
-                        var d1 = cb_obj.data;
-                        for (i = 0; i < inds.length; i++) {
-
-                            d1['words'][inds[i]]=''
-                            d1['x'][inds[i]]=-1000
-                            d1['y'][inds[i]]=-1000
-
-
-
-                        }
-                        s1.change.emit();
-                    """)
-                p1.add_layout(labels)
-                p1.add_layout(citation)
-                script, div = components(p1)
-                args={}
-                args['script']=script
-                args['div'] = div
+                BuildHtmlMap()
                 return args
-
-
             return render_to_response('WordMap.html', Map(os.path.join(MEDIA_ROOT,request.FILES['Data_xls'].name),int(request.POST['Data_size']),int(request.POST['Data_win']),int(request.POST['Data_minc'])))
 
     else:
