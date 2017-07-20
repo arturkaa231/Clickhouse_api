@@ -130,4 +130,4 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL = '/media/'  # URL для медии в шаблонах
+MEDIA_URL = '/media/'

@@ -163,7 +163,7 @@ def mainPage(request):
                 X = np.array(X)
 
                 WriteXls(a)
-                
+
                 # BuildWordMap()
 
                 BuildHtmlMap()
