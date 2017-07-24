@@ -14,6 +14,7 @@
 <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static "jquery.js "%}"></script>
+<script type="text/javascript" src="{% static "dropdown.js "%}"></script>
 
 </head>
 <body>
@@ -26,11 +27,33 @@
 
 
            {%  if username %}
-               <div class="col-lg-offset-11">
-                <ul class="nav navbar-nav">
+     <div class="container-fluid">
+        <div class="row"  >
+            <div class="col-lg-1 col-lg-offset-9 ">
 
-                <li ><a href="{% url "logout" %}">Exit({{ username }})</a> </li>
-            </ul></div>
+
+                <div class="btn-group">
+                     <button class="btn btn-link dropdown-toggle " data-toggle="dropdown">Actions<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+
+                        <li><a href="{% url "DownloadedTexts" 1 %}">Downloaded texts</a></li>
+                        <li class="divider"></li>
+                        <li><a href=""></a></li>
+
+                    </ul>
+                </div>
+                </ul>
+            </div>
+
+
+               <div class="col-lg-1">
+                <ul class="nav navbar-nav">
+                    <a href="{% url "logout" %}" class="btn btn-link" role="button">Exit({{ username }})</a>
+
+                </ul>
+               </div>
+        </div>
+     </div>
             {% else  %}
                 <div class="col-lg-offset-11"><ul class="nav navbar-nav"> <li><a href="{% url "login" %}">Log in</a></li></ul></div>
             {% endif %}
@@ -41,18 +64,22 @@
 </nav>
 
 <!-- сдвиг содержмого на середину с помощью foundation--->
-
+{% block downtext %}{% endblock %}
     <div  class="container-fluid">
-    <div class="row">
-        <div class="col-lg-5">
+     {% block maps %}{% endblock %}
+
+     {% block EnterData %}{% endblock %}
+     {% block EnterOptions %}{% endblock %}
+
+
         {% block Mapbody %}{% endblock %}
         {% block login %}{% endblock %}
-        {% block EnterData %}{% endblock %}
-        </div>
+
+
 
 
 
     </div>
-    </div>
+
 </body>
 </html>

@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+
+{% block maps %}
+
+    <h3>Select parameters for the text: "{{ text.Data_title }}"</h3>
+    {% if options %}
+    <h5><a href="{%  url "options" Data_id  %}">Build Map with another parameters</a></h5>
+    <div class="row">
+        <div class="col-lg-7" >
+        <div class="well">
+           {% for opt in options %}
+                <h5><strong>Parameters:</strong></h5>
+                <span><a href="{% url "showmap" opt.id %}"> size={{ opt.size }}    window={{ opt.win }}    minimal count of words={{ opt.minc }}             </a>    Map: {{ opt.img }}</span>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="row">
+            <div class="col-lg-3" >
+               <div class="alert alert-info">
+    Set of parameters were not selected, you can  <a href="{%  url "options" Data_id  %}"> choose one</a>
+</div>
+            </div>
+        </div>
+
+    {% endif %}
+
+<div class="col-lg-5">
+    <!--блок, отвечающий за пагинацию--->
+     <div class="row">
+        <div class="large-6 large-offset-5 columns">
+            <ul class="pagination">
+                {% if options.has_previous %}
+                    <li class="arrow"><a href="//{{ options.previous_page_number }}/">&laquo;</a> </li>
+                {% else %}
+                    <li class="arrow unavailable"><a href="">&laquo;</a> </li>
+                {% endif %}
+                {% for page in options.paginator.page_range %}
+                    {% if page == options.number %}
+                        <li class="current"><a href="/maps/{{ Data_id }}/{{ page }}/">{{ page }}</a></li>
+                    {% else %}
+                        <li><a href="/maps/{{ page }}/">{{ page }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if options.has_next %}
+                    <li class="arrow"><a href="/maps/{{ Data_id }}/{{ options.next_page_number }}/">&raquo;</a></li>
+                {% else %}
+                     <li class="arrow unavailable"><a href="">&raquo;</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{%  endblock %}

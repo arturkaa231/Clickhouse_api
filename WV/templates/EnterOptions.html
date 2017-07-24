@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% block EnterOptions %}
+<div  class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+
+    <h3 id="temp">Enter parameters of the Word2Vec model
+    <div class="btn-group">
+      <button class="btn dropdown-toggle" data-toggle="dropdown">Select template<span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="/template/400/10/40/{{ Data_id }}/">size=400, win=10, win=40</a></li>
+          <li class="divider"></li>
+          {% for i  in templates %}
+        <li><a href="/template/{{ i.size}}/{{ i.win}}/{{ i.minc}}/{{ Data_id }}/">size={{ i.size }}, win={{ i.win }}, win={{ i.minc }}</a></li>
+          {% endfor %}
+      </ul>
+
+    </div></h3>
+    <form  enctype="multipart/form-data" role="form" class="" action="{% url 'options' Data_id%}" method="post">
+    {%  csrf_token %}
+        <div class="form-group">
+             <label>Vector size:</label>
+            <input value="{{size}}" class="form-control" {{ form.size}}
+        </div>
+
+        <div class="form-group ">
+
+        <label>Window size:</label><br>
+            <input value="{{win}}" class="form-control" {{ form.win }}
+        </div>
+         <div class="form-group ">
+
+        <label>Minimal count of words:</label><br>
+            <input value="{{minc}}" class="form-control" {{ form.minc }}
+         </div>
+    </br>
+<input class="btn btn-primary btn-md" role="button" type="submit" value="BuildMap" size="100px">
+    </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
