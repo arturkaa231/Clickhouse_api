@@ -24,7 +24,7 @@ from WV.forms import EnterData,EnterOptions
 from bokeh.plotting import figure, output_file, show
 from bokeh.embed import components
 from bokeh.resources import CDN
-from Word2Vec.settings import BASE_DIR,MEDIA_ROOT
+from Word2Vec.settings import BASE_DIR,MEDIA_ROOT,STATICFILES_DIRS
 from uuid import uuid4
 from bokeh.io import export_png
 
@@ -60,7 +60,7 @@ def enteroptions(request,Data_id):
         form = EnterOptions(request.POST)
         data=Data.objects.get(id=Data_id)
         xls=data.Data_xls
-        print(xls)
+
 
         if form.is_valid():
             options=form.save(commit=False)
@@ -172,6 +172,16 @@ def enteroptions(request,Data_id):
                     p1.add_layout(citation)
                     script, div = components(p1)
 
+                    def ChangeName(filename):
+                        ext = filename.split('.')[-1]
+                        # get filename
+                        filename = '{}.{}'.format(uuid4().hex, ext)
+                        # return the whole path to the file
+                        return filename
+                    picture_name=ChangeName('.png')
+                    export_png(p1,os.path.join(STATICFILES_DIRS[1],picture_name))
+                    print(os.path.join(STATICFILES_DIRS[1],picture_name))
+                    options.img=picture_name
                     options.script=script
                     options.div=div
                     form.save()
