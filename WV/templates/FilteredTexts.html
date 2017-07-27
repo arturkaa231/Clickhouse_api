@@ -1,19 +1,22 @@
 {% extends 'main.html' %}
 {% load staticfiles %}
-{% block downtext %}
+{% block filttexts %}
     <div class="container-fluid">
     <div class="row">
     <div class="col-lg-5">
-    <form  enctype="multipart/form-data" role="form" class="" action="{% url 'DownloadedTexts' 1%}" method="post">
+    <form  enctype="multipart/form-data" role="form" class="" action="{% url 'FilteredTexts'  1 tags%}" method="post">
         {%  csrf_token %}
-    <h3>Select the text or filter by tags:</h3><div class="col-lg-3"><input value="" class="form-control" {{ form.tg }} </div>
+    <h3>Search by another tags:</h3><div class="col-lg-3"><input value="" class="form-control" {{ form.tg }} </div>
     <input class="btn btn-primary btn-md" role="button" type="submit" value="filter" size="100px">
 
     </form>
     </br>
-     {% if texts %}
+    {% if texts %}
 <div class="well homefull">
-        {% for txt in texts %}
+
+        {% for txt in texts%}
+
+
 
             <div class="well"> <span><small>Tags:</small></span>
                  {% for tg in txt.TAGS.all  %}
@@ -39,19 +42,19 @@
             <div class="row">
             <ul class="pagination">
                 {% if texts.has_previous %}
-                    <li class="arrow"><a href="//{{ texts.previous_page_number }}/">&laquo;</a> </li>
+                    <li class="arrow"><a href="/{{ texts.previous_page_number }}/{{ tags }}/">&laquo;</a> </li>
                 {% else %}
                     <li class="disabled"><a href="">&laquo;</a> </li>
                 {% endif %}
                 {% for page in texts.paginator.page_range %}
                     {% if page == texts.number %}
-                        <li class="active"><a href="/downloadedtexts/{{ page }}/">{{ page }}</a></li>
+                        <li class="active"><a href="/filteredtexts/{{ page }}/{{ tags }}/">{{ page }}</a></li>
                     {% else %}
-                        <li><a href="/downloadedtexts/{{ page }}/">{{ page }}</a></li>
+                        <li><a href="/filteredtexts/{{ page }}/{{ tags }}/">{{ page }}</a></li>
                     {% endif %}
                 {% endfor %}
                 {% if texts.has_next %}
-                    <li class="arrow"><a href="/downloadedtexts/{{ texts.next_page_number }}/">&raquo;</a></li>
+                    <li class="arrow"><a href="/filteredtexts/{{ texts.next_page_number }}/{{ tags }}/">&raquo;</a></li>
                 {% else %}
                      <li class="disabled"><a href="">&raquo;</a></li>
                 {% endif %}

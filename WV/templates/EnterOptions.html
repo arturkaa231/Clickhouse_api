@@ -37,6 +37,11 @@
     </br>
 <input class="btn btn-primary btn-md" role="button" type="submit" value="BuildMap" size="100px">
     </form>
+        {% if error %}
+        <div class="alert alert-danger">
+        </br>
+  <strong>Error</strong> {{ error }}{% endif %}
+</div>
         </div>
     </div>
 </div>

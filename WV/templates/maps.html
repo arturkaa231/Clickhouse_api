@@ -17,17 +17,23 @@
 
                 <div class=" well row">
                     <div class="col-lg-6"><a href="{% url "showmap" opt.id %}"> size={{ opt.size }}    window={{ opt.win }}    minimal count of words={{ opt.minc }}           </a></div>
+                    {% if opt.img %}
                     <img id="myImg" src="{% static opt.img %}" width="300" height="200">
                     <div id="myModal" class="modal">
                         <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
                         <img class="modal-content" id="img01">
                         <div id="caption"></div>
+
                     </div>
                 </div>
+               {% else %}
+                        <h4>there is no picture yet</h4>
+                        {% endif %}
             {% endfor %}
         </div>
         </div>
     </div>
+
     {% else %}
         <div class="row">
             <div class="col-lg-3" >
@@ -45,21 +51,21 @@
         <div class="large-6 large-offset-5 columns">
             <ul class="pagination">
                 {% if options.has_previous %}
-                    <li class="arrow"><a href="//{{ options.previous_page_number }}/">&laquo;</a> </li>
+                    <li class="arrow"><a href="/{{ Data_id }}/{{ options.previous_page_number }}/">&laquo;</a> </li>
                 {% else %}
-                    <li class="arrow unavailable"><a href="">&laquo;</a> </li>
+                    <li class="disabled"><a href="">&laquo;</a> </li>
                 {% endif %}
                 {% for page in options.paginator.page_range %}
                     {% if page == options.number %}
-                        <li class="current"><a href="/maps/{{ Data_id }}/{{ page }}/">{{ page }}</a></li>
+                        <li class="active"><a href="/maps/{{ Data_id }}/{{ page }}/">{{ page }}</a></li>
                     {% else %}
-                        <li><a href="/maps/{{ page }}/">{{ page }}</a></li>
+                        <li><a href="/maps/{{ Data_id }}/{{ page }}/">{{ page }}</a></li>
                     {% endif %}
                 {% endfor %}
                 {% if options.has_next %}
                     <li class="arrow"><a href="/maps/{{ Data_id }}/{{ options.next_page_number }}/">&raquo;</a></li>
                 {% else %}
-                     <li class="arrow unavailable"><a href="">&raquo;</a></li>
+                     <li class="disabled"><a href="">&raquo;</a></li>
                 {% endif %}
             </ul>
         </div>

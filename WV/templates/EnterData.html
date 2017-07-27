@@ -3,46 +3,48 @@
 {% block EnterData %}
     {% if username %}
         <div class="container">
-  <div class="jumbotron">
-    <h1>Word2Vec WordMap builder</h1>
-    <p>You can upload a file with texts, select optimal parameters by yourself,compare different wordmaps, use other people's texts and so on! </p>
-  </div>
-  <p></p>
+            <div class="jumbotron">
+                <h1>Word2Vec WordMap builder</h1>
+                <p>You can upload a file with texts, select optimal parameters by yourself,compare different wordmaps, use other people's texts and so on! </p>
+            </div>
+            <p></p>
 
-</div>
+        </div>
         <div  class="container-fluid">
-<div class="row">
-<div class="col-lg-offset-3  col-lg-6">
-  <h3>Enter the title of the text and upload a file</h3>
-    <form  enctype="multipart/form-data" role="form" class="" action="{% url 'EnterData'  %}" method="post">
-    {%  csrf_token %}
-     <div class="form-group">
-             <label>Title:</label>
-            <input value="" class="form-control" {{ form_text.Data_title}}
-        </div>
-</br>
- <div id="upskr" class="row">
-     <div class="form-group ">
-
-        <div class="col-lg-3"> <span id="skrepka"><img  src="{% static "skrepka.png "%}"width="40px" height="40px"> Upload a file(excel)</span> <span class=""></span></br>
-        <span id="upload" hidden="">{{ form_text.Data_xls}}</span>
-        </div>
-            <div class="col-lg-4"><input class="btn btn-primary btn-md" role="button" type="submit" value="Enter" size="100px"></div> </div>
-    </form>
-    <script type="text/javascript" src="{% static "fileupload.js "%}"></script>
-
-
-        {% if error %}
-        <div class="alert alert-danger">
-        </br>
-  <strong>Error</strong> {{ error }}{% endif %}
-</div>
-    {% else %}
-     <h3>Please log in or <a href="{%  url 'register'%}">register</a> if you don't have an account</h3>
-    {% endif %}
-</div></div>
+            <div class="row">
+                <div class="col-lg-offset-3  col-lg-6">
+                    <h3>Enter the title of the text and upload a file</h3>
+                    <form  enctype="multipart/form-data" role="form" class="" action="{% url 'EnterData'  %}" method="post">
+                    {%  csrf_token %}
+                         <div class="form-group">
+                             <label>Title:</label>
+                            <input value="" class="form-control" {{ form_text.Data_title}}
+                         </div>
+                         </br>
+                        <div class="form-group">
+                            <label>Tags(separated by commas):</label>
+                            <input value="" class="form-control" {{ form.tg}}
+                        </div>
+                        </br>
+                        <div id="upskr" class="row">
+                            <div class="form-group ">
+                                <div class="col-lg-3"> <span id="skrepka"><img  src="{% static "skrepka.png "%}"width="40px" height="40px"> Upload a file(excel)</span> <span class=""></span></br>
+                                    <span id="upload" hidden="">{{ form_text.Data_xls}}</span>
+                                </div>
+                                <div class="col-lg-4"><input class="btn btn-primary btn-md" role="button" type="submit" value="Enter" size="100px"></div> </div>
+                                </form>
+                    <script type="text/javascript" src="{% static "fileupload.js "%}"></script>
+                    </br></br>
+                    {% if error %}
+                        <div class="alert alert-danger">
+                        </br>
+                            <strong>Error</strong> {{ error }}{% endif %}
+                        </div>
+                    {% else %}
+                        <h3>Please log in or <a href="{%  url 'register'%}">register</a> if you don't have an account</h3>
+                    {% endif %}
+                </div>
+            </div>
 {% endblock %}
-
-</div>
-
+        </div>
 </div>

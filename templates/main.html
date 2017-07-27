@@ -39,7 +39,7 @@
 
                         <li><a href="{% url "DownloadedTexts" 1 %}">Downloaded texts</a></li>
                         <li class="divider"></li>
-                        <li><a href=""></a></li>
+                        <li><a href="{% url "EnterData" %}">Upload a file</a></li>
 
                     </ul>
                 </div>
@@ -66,6 +66,7 @@
 
 <!-- сдвиг содержмого на середину с помощью foundation--->
 {% block downtext %}{% endblock %}
+{% block filttexts %}{% endblock %}
     <div  class="container-fluid">
      {% block maps %}{% endblock %}
 

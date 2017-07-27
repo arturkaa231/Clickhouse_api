@@ -1,8 +1,9 @@
 from django.forms import ModelForm, fields,forms
-from WV.models import Data,Options
+from WV.models import Data,Options,Tags
 from Word2Vec import settings
 from uuid import uuid4
 import os.path
+
 class EnterOptions(ModelForm):
     class Meta:
         model = Options
@@ -11,13 +12,13 @@ class EnterOptions(ModelForm):
     def __str__(self):
         return self.as_div()
 
+        # run the parent validation first
 
 
 class EnterData(ModelForm):
-
     class Meta:
         model=Data
-        fields = ['Data_title','Data_xls',]
+        fields = ['Data_title','Data_xls']
 
     def __str__(self):
         return self.as_div()
@@ -31,7 +32,7 @@ class EnterData(ModelForm):
             return filename
         cleaned_data = self.cleaned_data
         cleaned_data['Data_xls'].name=ChangeName(filename= cleaned_data['Data_xls'].name)
-        print(cleaned_data)
+
 
         return cleaned_data
     def is_valid(self):
@@ -46,8 +47,34 @@ class EnterData(ModelForm):
         if file_extension not in extensions:
 
             return False
+
         # run the parent validation first
         else:
             return True
 
+
+
+class TagsForm(ModelForm):
+
+    class Meta:
+        model=Tags
+        fields = ['tg']
+
+    def __str__(self):
+        return self.as_div()
+    def is_valid(self):
+
+        valid = super(TagsForm, self).is_valid()
+        # we're done now if not valid
+        if not valid:
+            return valid
+        punct=['/',";","'",'.','#', ':', '!', '?','%','^','<','>','&',')','(','{','}',']','[','$','@']
+        for i in self.cleaned_data['tg']:
+            if i in punct:
+                return False
+        if not self.cleaned_data['tg']:
+            return False
+        # run the parent validation first
+        else:
+            return True
 
