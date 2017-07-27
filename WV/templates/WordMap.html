@@ -8,13 +8,25 @@
         {{ script| safe }}
 {% endblock %}
 {% block Mapbody %}
+    <div class="container-fluid">
         <!-- INSERT DIVS HERE -->
-<div class="container-fluid">
-    <div id="widget" class="row">
+        <div id="widget" class="row ">
+            <div class="col-lg-offset-7 btn-group">
 
-        <div id="" class="col-lg-5">
+                     <a class="btn btn-primary" href="{%  url "options" Data_id  %}" >Build Map with another parameters</a>
+
+
+                    <a class="btn btn-primary" href="{%  url "DownloadedTexts" 1  %}" >Downloaded texts</a>
+
+            </div>
+        </div>
+    <div  class="row">
+
+        <div id="" class="col-lg-4">
             {{ div|safe }}
         </div>
-    </div></div>
+
+    </div>
+    </div>
 
     {% endblock %}

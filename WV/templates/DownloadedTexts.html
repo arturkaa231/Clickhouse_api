@@ -6,11 +6,12 @@
     <div class="col-lg-5">
     <form  enctype="multipart/form-data" role="form" class="" action="{% url 'DownloadedTexts' 1%}" method="post">
         {%  csrf_token %}
-    <h3>Select the text or filter by tags:</h3><div class="col-lg-3"><input value="" class="form-control" {{ form.tg }} </div>
+    <h3>Select the text or filter by tag:</h3><div class="col-lg-3"><input value="" class="form-control" {{ form.tg }} </div>
     <input class="btn btn-primary btn-md" role="button" type="submit" value="filter" size="100px">
 
     </form>
     </br>
+
      {% if texts %}
 <div class="well homefull">
         {% for txt in texts %}

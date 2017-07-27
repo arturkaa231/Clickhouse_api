@@ -156,7 +156,7 @@ def Enteroptions(request,Data_id):
                     s1 = ColumnDataSource(data=dict(x=list(X[:, 0]), y=list(X[:, 1]), words=list(model.wv.vocab.keys()),
                                                     color=['#000000' for i in range(len(list(model.wv.vocab.keys())))]))#data_url='http://localhost:8000/view2d/data/',polling_interval=100,method='GET')
                     p1 = figure(tools="pan,lasso_select,wheel_zoom,reset,save,tap", title="Word map",
-                                plot_width=1500, plot_height=900, x_range=Range1d(-0.1, 0.1))
+                                plot_width=1500, plot_height=800, x_range=Range1d(-0.1, 0.1))
 
                     p1.scatter(x='x', y='y', size=10, source=s1, alpha=0, color='#000000')
                     labels = LabelSet(x='x', y='y', text_color='color', text='words',
@@ -211,7 +211,7 @@ def Enteroptions(request,Data_id):
                     args['username'] = auth.get_user(request).username
                     args['script'] = script
                     args['div'] = div
-                    args['Data_id']=Data_id
+                    args['Data_id'] = Data_id
 
                 WL = ReadXls(xls)
                 W = []
@@ -226,12 +226,10 @@ def Enteroptions(request,Data_id):
 
                 # Create the model
                 model = Word2Vec(Words, size=size, window=win, min_count=minc)
-
                 X = []
                 for i in model.wv.vocab.keys():
                     X.append(model.wv[i])
                 X = np.array(X)
-
                 #WriteXls(xls)
                 # BuildWordMap()
                 BuildHtmlMap()
@@ -264,18 +262,18 @@ def DownloadedTexts(request,page_number=1):
     args={}
     args.update(csrf(request))
     args['username'] = auth.get_user(request).username
-    # Добавление пагинации
+
 
 
     if request.method=="POST" :
         form=TagsForm(request.POST)
         if form.is_valid():
-            #теги совпадающие с введеным в фильтр тегов
             return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
         else:
             all_texts = Data.objects.all().order_by('-id')
             args['texts'] = Paginator(all_texts, 10).page(page_number)
             args['form'] = TagsForm
+            args['error'] = TagsForm
             return render_to_response('DownloadedTexts.html', args)
     else:
         all_texts = Data.objects.all().order_by('-id')
@@ -287,13 +285,14 @@ def FilteredTexts(request, page_number=1,tags=''):
     args = {}
     args.update(csrf(request))
     args['username'] = auth.get_user(request).username
-    # Добавление пагинации
+
 
 
     if request.method == "POST":
         form = TagsForm(request.POST)
         if form.is_valid():
-            # теги совпадающие с введеным в фильтр тегом
+
+
             return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
         else:
             tgs = Tags.objects.filter(tg=tags)
@@ -306,7 +305,6 @@ def FilteredTexts(request, page_number=1,tags=''):
             args['form'] = TagsForm
             return render_to_response('FilteredTexts.html', args)
     else:
-
         tgs = Tags.objects.filter(tg=tags)
         all_texts = []
         for i in tgs:
@@ -324,9 +322,10 @@ def Maps(request,Data_id,page_number=1):
     all_options = Options.objects.filter(text_id=Data_id)
     args['options'] = Paginator(all_options, 2).page(page_number)
     args['Data_id']=Data_id
+
     args['text']=Data.objects.get(id=Data_id)
     return render_to_response('maps.html',args)
-def Showmap(request,Opt_id):
+def Showmap(request,Opt_id,Data_id):
     args = {}
     args.update(csrf(request))
     args['username'] = auth.get_user(request).username
@@ -335,4 +334,5 @@ def Showmap(request,Opt_id):
     div = Options.objects.get(id=Opt_id).div
     args['script'] = script
     args['div'] = div
+    args['Data_id'] = Data_id
     return render_to_response("WordMap.html",args)

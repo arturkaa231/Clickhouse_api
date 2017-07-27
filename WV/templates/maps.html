@@ -4,9 +4,9 @@
 
     <h3>Select parameters for the text: "{{ text.Data_title }}"</h3>
     {% if options %}
-    <h5><a href="{%  url "options" Data_id  %}">Build Map with another parameters</a></h5>
+    <h5><a class="btn btn-primary" href="{%  url "options" Data_id  %}">Build Map with another parameters</a></h5>
     <div class="row">
-        <div class="col-lg-7" >
+        <div class="col-lg-7 " >
         <div class="well homefull">
             <div class="row">
                 <div class="col-lg-6"><h5><strong>Parameters(select  to edit picture):</strong></h5></div>
@@ -16,7 +16,7 @@
            {% for opt in options %}
 
                 <div class=" well row">
-                    <div class="col-lg-6"><a href="{% url "showmap" opt.id %}"> size={{ opt.size }}    window={{ opt.win }}    minimal count of words={{ opt.minc }}           </a></div>
+                    <div class="col-lg-6"><a href="{% url "showmap" opt.id Data_id%}"> size={{ opt.size }}    window={{ opt.win }}    minimal count of words={{ opt.minc }}           </a></div>
                     {% if opt.img %}
                     <img id="myImg" src="{% static opt.img %}" width="300" height="200">
                     <div id="myModal" class="modal">
