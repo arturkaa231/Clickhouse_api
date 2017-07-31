@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'WV',
     'loginsys',
-    'django_cleanup'
+    
     ]
 
 MIDDLEWARE = [

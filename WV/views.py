@@ -76,6 +76,7 @@ def Enteroptions(request,Data_id):
         if form.is_valid():
             options=form.save(commit=False)
             options.text=Data.objects.get(Data_xls=xls)
+
             #проверка на повторяющиеся сеты параметров
             for i in Options.objects.filter(text_id=Data_id)[:]:
                 if int(request.POST['size'])==i.size and int(request.POST['win'])== i.win and int(request.POST['minc'])== i.minc:
@@ -268,6 +269,7 @@ def DownloadedTexts(request,page_number=1):
     if request.method=="POST" :
         form=TagsForm(request.POST)
         if form.is_valid():
+            print(request.POST['tg'])
             return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
         else:
             all_texts = Data.objects.all().order_by('-id')
@@ -305,6 +307,7 @@ def FilteredTexts(request, page_number=1,tags=''):
             args['form'] = TagsForm
             return render_to_response('FilteredTexts.html', args)
     else:
+        print(tags)
         tgs = Tags.objects.filter(tg=tags)
         all_texts = []
         for i in tgs:
