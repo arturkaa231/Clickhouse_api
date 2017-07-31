@@ -23,7 +23,7 @@ from WV.models import Data,Templates,Options,Tags
 from WV.forms import EnterData,EnterOptions,TagsForm
 from bokeh.plotting import figure, output_file, show
 from bokeh.embed import components
-from bokeh.resources import CDN
+
 from Word2Vec.settings import BASE_DIR,MEDIA_ROOT,STATICFILES_DIRS
 from uuid import uuid4
 from bokeh.io import export_png,export_svgs
