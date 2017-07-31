@@ -41,9 +41,12 @@ class EnterData(ModelForm):
         # we're done now if not valid
         if not valid:
             return valid
+
+
         extensions = ['.xls', '.xlsx','.xlsm','.csv','.xlt','.xltx' ]
 
         filename, file_extension = os.path.splitext(self.cleaned_data['Data_xls'].name)
+
         if file_extension not in extensions:
 
             return False

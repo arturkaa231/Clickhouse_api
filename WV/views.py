@@ -39,10 +39,19 @@ def MainPage(request):
     if request.method=="POST":
         form_text=EnterData(request.POST, request.FILES)
         form_tg=TagsForm(request.POST)
+        if not request.FILES:
+            args['form_text'] = EnterData
+            args['form'] = TagsForm
+            args['error'] = 'Please,  add a file'
+            return render_to_response('EnterData.html', args)
+
+
+
         #form.article_auth=auth.get_user(request).username
 
-        if  form_text.is_valid() and form_tg.is_valid():
-            form_text.save()
+        if  form_text.is_valid() and form_tg.is_valid() :
+
+
             #разделяем строку с тегами на отдельные теги
             def Split(tags):
                 return tags.split(',')

@@ -125,9 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-     "static",os.path.join(BASE_DIR, 'WV/static/'),
+     os.path.join(BASE_DIR, 'WV/static/'),
 ]
-STATIC_ROOT="st_root"
+STATIC_ROOT="/root/venv/WebWord2Vec/static/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
