@@ -24,12 +24,11 @@ from WV.forms import EnterData,EnterOptions,TagsForm
 from bokeh.plotting import figure, output_file, show
 from bokeh.embed import components
 
-from Word2Vec.settings import BASE_DIR,MEDIA_ROOT,STATICFILES_DIRS
+from Word2Vec.settings import BASE_DIR,MEDIA_ROOT,STATICFILES_DIRS,STATIC_ROOT
 from uuid import uuid4
 from bokeh.io import export_png,export_svgs
 from bokeh.models.sources import AjaxDataSource
 from django.http import JsonResponse
-
 
 def MainPage(request):
     args = {}
@@ -50,17 +49,18 @@ def MainPage(request):
         #form.article_auth=auth.get_user(request).username
 
         if  form_text.is_valid() and form_tg.is_valid() :
-
-
+            form_text.save()
             #разделяем строку с тегами на отдельные теги
             def Split(tags):
                 return tags.split(',')
             cleaned_tags=Split(request.POST['tg'])
 
             for i in cleaned_tags:
-                tg=Tags(text_id=Data.objects.get(Data_xls=request.FILES['Data_xls']).id,tg=i)
+
+                tg=Tags(text_id=Data.objects.get(Data_xls='./'+str(request.FILES['Data_xls'])).id,tg=i)
+
                 tg.save()
-            return redirect(reverse('options',args=[Data.objects.get(Data_xls=request.FILES['Data_xls']).id]))
+            return redirect(reverse('options',args=[Data.objects.get(Data_xls='./'+str(request.FILES['Data_xls'])).id]))
 
         else:
             args['form_text'] = EnterData
@@ -165,7 +165,7 @@ def Enteroptions(request,Data_id):
 
                     s1 = ColumnDataSource(data=dict(x=list(X[:, 0]), y=list(X[:, 1]), words=list(model.wv.vocab.keys()),
                                                     color=['#000000' for i in range(len(list(model.wv.vocab.keys())))]))#data_url='http://localhost:8000/view2d/data/',polling_interval=100,method='GET')
-                    p1 = figure(tools="pan,lasso_select,wheel_zoom,reset,save,tap", title="Word map",
+                    p1 = figure(tools="pan,lasso_select,wheel_zoom,save,tap", title="Word map",
                                 plot_width=1500, plot_height=800, x_range=Range1d(-0.1, 0.1))
 
                     p1.scatter(x='x', y='y', size=10, source=s1, alpha=0, color='#000000')
@@ -213,16 +213,16 @@ def Enteroptions(request,Data_id):
                         return filename
                     picture_name=ChangeName('.png')
 
-                    export_png(p1,os.path.join(STATICFILES_DIRS[1],picture_name))
-                    options.img=picture_name
-                    options.script=script
-                    options.div=div
+                    export_png(p1,os.path.join(STATIC_ROOT,picture_name))
+                    options.img = picture_name
+
+                    options.script = script
+                    options.div = div
                     form.save()
                     args['username'] = auth.get_user(request).username
                     args['script'] = script
                     args['div'] = div
                     args['Data_id'] = Data_id
-
                 WL = ReadXls(xls)
                 W = []
                 # clean from punctuations
@@ -244,7 +244,6 @@ def Enteroptions(request,Data_id):
                 # BuildWordMap()
                 BuildHtmlMap()
                 return args
-        #переделать на ajax
             return render_to_response('WordMap.html', Map(os.path.join(MEDIA_ROOT,str(xls)),
                                                           int(request.POST['size']), int(request.POST['win']),
                                                           int(request.POST['minc'])))
@@ -254,8 +253,6 @@ def Enteroptions(request,Data_id):
         args['Data_id']=Data_id
         return render_to_response('EnterOptions.html',args)
 
-
-#вывод шаблонов
 def Template(request,size,win,minc,Data_id):
     args={}
     args.update(csrf(request))
@@ -278,7 +275,6 @@ def DownloadedTexts(request,page_number=1):
     if request.method=="POST" :
         form=TagsForm(request.POST)
         if form.is_valid():
-            print(request.POST['tg'])
             return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
         else:
             all_texts = Data.objects.all().order_by('-id')
@@ -316,7 +312,6 @@ def FilteredTexts(request, page_number=1,tags=''):
             args['form'] = TagsForm
             return render_to_response('FilteredTexts.html', args)
     else:
-        print(tags)
         tgs = Tags.objects.filter(tg=tags)
         all_texts = []
         for i in tgs:

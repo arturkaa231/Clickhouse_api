@@ -28,7 +28,6 @@ class EnterData(ModelForm):
             ext = filename.split('.')[-1]
             # get filename
             filename = '{}.{}'.format(uuid4().hex, ext)
-            # return the whole path to the file
             return filename
         cleaned_data = self.cleaned_data
         cleaned_data['Data_xls'].name=ChangeName(filename= cleaned_data['Data_xls'].name)
@@ -43,8 +42,7 @@ class EnterData(ModelForm):
             return valid
 
 
-        extensions = ['.xls', '.xlsx','.xlsm','.csv','.xlt','.xltx' ]
-
+        extensions = ['.xls', '.xlsx','.xlsm','.csv','.xlt','.xltx']
         filename, file_extension = os.path.splitext(self.cleaned_data['Data_xls'].name)
 
         if file_extension not in extensions:

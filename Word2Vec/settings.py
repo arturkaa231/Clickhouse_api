@@ -17,17 +17,33 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-TASK_UPLOAD_FILE_TYPES = ['xls']
+
 TASK_UPLOAD_FILE_MAX_SIZE = "5242880"
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '@%f+@fq)*-7g6t*s0@w(mie#tr6u-7+b-rf5#5svu3^(+3nh6r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = ['85.143.172.199']
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/opt/WebWord2Vec/debug.log',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 # Application definition
 
 INSTALLED_APPS = [
@@ -82,7 +98,7 @@ WSGI_APPLICATION = 'Word2Vec.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': '/opt/WebWord2Vec/db.sqlite3',
     }
 }
 
@@ -127,8 +143,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
      os.path.join(BASE_DIR, 'WV/static/'),
 ]
-STATIC_ROOT="/root/venv/WebWord2Vec/static/"
+STATIC_ROOT="/opt/static/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT =  '/opt/WebWord2Vec/media/'
 
 MEDIA_URL = '/media/'

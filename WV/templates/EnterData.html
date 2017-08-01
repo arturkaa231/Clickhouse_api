@@ -28,14 +28,15 @@
                         </br>
                         <div id="upskr" class="row">
                             <div class="form-group ">
-                                <div class="col-lg-3"> <span id="skrepka"><img  src="{% static "skrepka.png "%}"width="40px" height="40px"> Upload a file(excel)</span> <span class=""></span></br>
-                                    <span id="upload" hidden="">{{ form_text.Data_xls}}</span>
+                                <div class="col-lg-3"> <span id="skrepka"><img  src="{% static "skrepka.png"%}"width="40px" height="40px"> Upload a file(excel)</span> <span class=""></span></br>
+                                    <span id="upload" hidden="">{{form_text.Data_xls}}</span>
                                 </div>
                                 <div class="col-lg-4"><input class="btn btn-primary btn-md" role="button" type="submit" value="Enter" size="100px"></div> </div>
                                 </form>
-                    <script type="text/javascript" src="{% static "fileupload.js "%}"></script>
+                    <script type="text/javascript" src="{% static "fileupload.js"%}"></script>
                     </br></br>
                     {% if error %}
+                        </br>
                         <div class="alert alert-danger">
                         </br>
                             <strong>Error</strong> {{ error }}{% endif %}
