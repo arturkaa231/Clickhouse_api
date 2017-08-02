@@ -2256,3 +2256,40 @@ Traceback (most recent call last):
     return args
   File "/opt/WebWord2Vec/WV/views.py", line 218, in BuildHtmlMap
 OSError: [Errno 5] Input/output error
+Forbidden (CSRF cookie not set.): /hndUnblock.cgi
+Internal Server Error: /options/320/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 251, in Enteroptions
+    args['form'] = EnterOptions
+  File "/opt/WebWord2Vec/WV/views.py", line 246, in Map
+    return args
+  File "/opt/WebWord2Vec/WV/views.py", line 218, in BuildHtmlMap
+OSError: [Errno 5] Input/output error
+Internal Server Error: /options/320/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 251, in Enteroptions
+    args['form'] = EnterOptions
+  File "/opt/WebWord2Vec/WV/views.py", line 246, in Map
+    return args
+  File "/opt/WebWord2Vec/WV/views.py", line 218, in BuildHtmlMap
+OSError: [Errno 5] Input/output error
+Internal Server Error: /options/320/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 251, in Enteroptions
+    args['form'] = EnterOptions
+  File "/opt/WebWord2Vec/WV/views.py", line 246, in Map
+    return args
+  File "/opt/WebWord2Vec/WV/views.py", line 218, in BuildHtmlMap
+OSError: [Errno 5] Input/output error

@@ -29,7 +29,8 @@ from uuid import uuid4
 from bokeh.io import export_png,export_svgs
 from bokeh.models.sources import AjaxDataSource
 from django.http import JsonResponse
-
+def Split(tags):
+    return tags.split(',')
 def MainPage(request):
     args = {}
     args.update(csrf(request))
@@ -51,8 +52,6 @@ def MainPage(request):
         if  form_text.is_valid() and form_tg.is_valid() :
             form_text.save()
             #разделяем строку с тегами на отдельные теги
-            def Split(tags):
-                return tags.split(',')
             cleaned_tags=Split(request.POST['tg'])
 
             for i in cleaned_tags:
@@ -302,10 +301,17 @@ def FilteredTexts(request, page_number=1,tags=''):
 
             return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
         else:
-            tgs = Tags.objects.filter(tg=tags)
+            cleaned_tags = Split(tags)
+            all_tags=[]
             all_texts = []
-            for i in tgs:
-                all_texts.append(Data.objects.get(id=i.text_id))
+            for i in cleaned_tags:
+                all_tags.append(Tags.objects.filter(tg=i))
+
+            for i in all_tags:
+                for k in i:
+                    all_texts.append(Data.objects.get(id=k.text_id))
+
+
 
             args['tags'] = tags
             args['texts'] = Paginator(all_texts, 10).page(page_number)

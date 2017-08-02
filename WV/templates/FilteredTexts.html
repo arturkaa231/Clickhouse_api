@@ -6,7 +6,7 @@
     <div class="col-lg-5">
     <form  enctype="multipart/form-data" role="form" class="" action="{% url 'FilteredTexts'  1 tags%}" method="post">
         {%  csrf_token %}
-    <h3>Search by another tag:</h3><div class="col-lg-3"><input value="" class="form-control" {{ form.tg }} </div>
+    <h3>Search by another tags:</h3><div class="col-lg-3"><input value="" class="form-control" {{ form.tg }} </div>
     <input class="btn btn-primary btn-md" role="button" type="submit" value="filter" size="100px">
 
     </form>
