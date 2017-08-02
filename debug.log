@@ -2293,3 +2293,994 @@ Traceback (most recent call last):
     return args
   File "/opt/WebWord2Vec/WV/views.py", line 218, in BuildHtmlMap
 OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/semantica/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+    else:
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/dom/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+    else:
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/dom/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 308, in FilteredTexts
+    all_tags.append(Tags.objects.filter(tg=i))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, ' dom')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /filteredtexts/1/dom/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 308, in FilteredTexts
+    all_tags.append(Tags.objects.filter(tg=i))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, ' dom')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'kuhni ')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'kuhni ')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1,tag2')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1,tag2')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1,tag2')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    args['error'] = TagsForm
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /maps/320/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 336, in Maps
+    args.update(csrf(request))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 50, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 43, in validate_number
+    raise EmptyPage('That page contains no results')
+django.core.paginator.EmptyPage: That page contains no results
+Internal Server Error: /maps/319/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 336, in Maps
+    args.update(csrf(request))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 50, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 43, in validate_number
+    raise EmptyPage('That page contains no results')
+django.core.paginator.EmptyPage: That page contains no results
+Internal Server Error: /maps/320/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 336, in Maps
+    args.update(csrf(request))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 50, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 43, in validate_number
+    raise EmptyPage('That page contains no results')
+django.core.paginator.EmptyPage: That page contains no results
+Internal Server Error: /maps/320/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 336, in Maps
+    args.update(csrf(request))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 50, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 43, in validate_number
+    raise EmptyPage('That page contains no results')
+django.core.paginator.EmptyPage: That page contains no results
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1,tag2')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1,tag2')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1,tag2')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1,tag2')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\w+)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\S)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\S)/$']
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 277, in DownloadedTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, 'tag1')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\S)/$']
+Internal Server Error: /maps/319/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 336, in Maps
+    args.update(csrf(request))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 50, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 43, in validate_number
+    raise EmptyPage('That page contains no results')
+django.core.paginator.EmptyPage: That page contains no results
+Internal Server Error: /maps/319/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 336, in Maps
+    args.update(csrf(request))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 50, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 43, in validate_number
+    raise EmptyPage('That page contains no results')
+django.core.paginator.EmptyPage: That page contains no results
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/tag1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+    args['texts'] = Paginator(data.all(), 10).page(page_number)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/tag1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+    args['texts'] = Paginator(data.all(), 10).page(page_number)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/tag2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+    args['texts'] = Paginator(data.all(), 10).page(page_number)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/semantica/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/semantica/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/tag1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/tag1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /filteredtexts/1/tag1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+OSError: [Errno 5] Input/output error  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 320, in FilteredTexts
+OSError: [Errno 5] Input/output error
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 282, in DownloadedTexts
+    return render_to_response('DownloadedTexts.html', args)
+OSError: [Errno 5] Input/output error
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 51, in MainPage
+  File "/opt/WebWord2Vec/WV/forms.py", line 40, in is_valid
+    # we're done now if not valid
+  File "/usr/local/lib/python3.5/dist-packages/django/forms/forms.py", line 161, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.5/dist-packages/django/forms/forms.py", line 153, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.5/dist-packages/django/forms/forms.py", line 363, in full_clean
+    self._clean_form()
+  File "/usr/local/lib/python3.5/dist-packages/django/forms/forms.py", line 390, in _clean_form
+    cleaned_data = self.clean()
+  File "/opt/WebWord2Vec/WV/forms.py", line 34, in clean
+  File "/opt/WebWord2Vec/WV/forms.py", line 31, in ChangeName
+    return filename
+OSError: [Errno 5] Input/output error
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 51, in MainPage
+  File "/opt/WebWord2Vec/WV/forms.py", line 40, in is_valid
+    # we're done now if not valid
+  File "/usr/local/lib/python3.5/dist-packages/django/forms/forms.py", line 161, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.5/dist-packages/django/forms/forms.py", line 153, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.5/dist-packages/django/forms/forms.py", line 363, in full_clean
+    self._clean_form()
+  File "/usr/local/lib/python3.5/dist-packages/django/forms/forms.py", line 390, in _clean_form
+    cleaned_data = self.clean()
+  File "/opt/WebWord2Vec/WV/forms.py", line 34, in clean
+  File "/opt/WebWord2Vec/WV/forms.py", line 31, in ChangeName
+    return filename
+OSError: [Errno 5] Input/output error
+Internal Server Error: /maps/319/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 336, in Maps
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 50, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 43, in validate_number
+    raise EmptyPage('That page contains no results')
+django.core.paginator.EmptyPage: That page contains no results
+Internal Server Error: /maps/319/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 336, in Maps
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 50, in page
+    number = self.validate_number(number)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/paginator.py", line 43, in validate_number
+    raise EmptyPage('That page contains no results')
+django.core.paginator.EmptyPage: That page contains no results
+Internal Server Error: /auth/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 506, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/loginsys/views.py", line 46, in register
+    return render_to_response('register.html',args)
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 241, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 508, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 562, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until]),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 26: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+Internal Server Error: /auth/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 506, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/loginsys/views.py", line 45, in register
+    args['error']='Bad password or user already exists'
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 241, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 508, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 562, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until]),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 26: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+Internal Server Error: /auth/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 506, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/loginsys/views.py", line 46, in register
+    return render_to_response('register.html',args)
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 241, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 508, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 562, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until]),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 26: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+Internal Server Error: /auth/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 506, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/loginsys/views.py", line 46, in register
+    return render_to_response('register.html',args)
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 241, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 508, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 562, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until]),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 26: 'endif', expected 'endblock'. Did you forget to register or load this tag?

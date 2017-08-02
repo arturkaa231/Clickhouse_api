@@ -268,9 +268,6 @@ def DownloadedTexts(request,page_number=1):
     args={}
     args.update(csrf(request))
     args['username'] = auth.get_user(request).username
-
-
-
     if request.method=="POST" :
         form=TagsForm(request.POST)
         if form.is_valid():
@@ -279,7 +276,6 @@ def DownloadedTexts(request,page_number=1):
             all_texts = Data.objects.all().order_by('-id')
             args['texts'] = Paginator(all_texts, 10).page(page_number)
             args['form'] = TagsForm
-            args['error'] = TagsForm
             return render_to_response('DownloadedTexts.html', args)
     else:
         all_texts = Data.objects.all().order_by('-id')
@@ -292,39 +288,22 @@ def FilteredTexts(request, page_number=1,tags=''):
     args.update(csrf(request))
     args['username'] = auth.get_user(request).username
 
-
-
     if request.method == "POST":
         form = TagsForm(request.POST)
         if form.is_valid():
-
-
             return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
         else:
-            cleaned_tags = Split(tags)
-            all_tags=[]
-            all_texts = []
-            for i in cleaned_tags:
-                all_tags.append(Tags.objects.filter(tg=i))
-
-            for i in all_tags:
-                for k in i:
-                    all_texts.append(Data.objects.get(id=k.text_id))
-
-
-
             args['tags'] = tags
-            args['texts'] = Paginator(all_texts, 10).page(page_number)
+            args['texts'] =None
             args['form'] = TagsForm
             return render_to_response('FilteredTexts.html', args)
     else:
-        tgs = Tags.objects.filter(tg=tags)
-        all_texts = []
-        for i in tgs:
-            all_texts.append(Data.objects.get(id=i.text_id))
-
+        cleaned_tags = Split(tags)
+        data=Data.objects
+        for i in cleaned_tags:
+            data=data.filter(TAGS__tg=i)
         args['tags'] = tags
-        args['texts'] = Paginator(all_texts, 10).page(page_number)
+        args['texts'] = Paginator(data.all(),10).page(page_number)
         args['form'] = TagsForm
         return render_to_response('FilteredTexts.html', args)
 def Maps(request,Data_id,page_number=1):
@@ -333,9 +312,8 @@ def Maps(request,Data_id,page_number=1):
     args['username'] = auth.get_user(request).username
     # Добавление пагинации
     all_options = Options.objects.filter(text_id=Data_id)
-    args['options'] = Paginator(all_options, 2).page(page_number)
+    args['options'] = Paginator(all_options,1).page(page_number)
     args['Data_id']=Data_id
-
     args['text']=Data.objects.get(id=Data_id)
     return render_to_response('maps.html',args)
 def Showmap(request,Opt_id,Data_id):

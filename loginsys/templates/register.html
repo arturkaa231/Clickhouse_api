@@ -17,5 +17,12 @@
     <div class="form-group">
                  <input class="btn btn-primary btn-md" role="button" type="submit" value="Register"></div></div>
         </form>
-    </div>
+    
+{% if error %}
+<div class="alert alert-danger">
+                        </br>
+                            <strong>Error</strong> {{ error }}
+                        </div>
+                    {% endif %}
+</div>
 {% endblock %}

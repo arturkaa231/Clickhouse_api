@@ -42,4 +42,5 @@ def register(request):
             return redirect('/')
         else:
             args['form']=new_user_form
+            args['error']='Bad password or user already exists'
     return render_to_response('register.html',args)
