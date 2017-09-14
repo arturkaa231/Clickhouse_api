@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% block EnterImageOptions %}
+<div  class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-2">
+
+    <h3 id="temp">Enter image parameters of the Word2Vec model
+   </h3>
+    <form  enctype="multipart/form-data" role="form" class="" action="{% url 'imageoptions' Data_id Opt_id%}" method="post">
+    {%  csrf_token %}
+
+           <div class="form-group ">
+        <label>Number of clusters:</label><br>
+            <input class="form-control" {{ form.num_clusters }}
+         </div>
+ <div class="form-group ">
+        <label>Number of neighbors:</label><br>
+            <input  class="form-control" {{ form.num_neighbors }}
+         </div>
+
+    </br>
+<input class="btn btn-primary btn-md" role="button" type="submit" value="Build Map" size="100px">
+    </form>
+
+        {% if error %}
+        <div class="alert alert-danger">
+        </br>
+  <strong>Error</strong> {{ error }}{% endif %}
+</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

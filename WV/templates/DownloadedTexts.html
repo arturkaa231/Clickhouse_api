@@ -3,7 +3,7 @@
 {% block downtext %}
     <div class="container-fluid">
     <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-6 col-sm-offset-2">
     <form  enctype="multipart/form-data" role="form" class="" action="{% url 'DownloadedTexts' 1%}" method="post">
         {%  csrf_token %}
     <h3>Select the text or filter by tags(separated by commas):</h3><div class="col-lg-3"><input value="" class="form-control" {{ form.tg }} </div>
@@ -20,7 +20,7 @@
                  {% for tg in txt.TAGS.all  %}
                 <span><small>{{ tg.tg }}</small></span>
             {% endfor %}
-                <h4><small>Title: </small><a href="{% url "maps" txt.id 1 %}">{{ txt.Data_title }}</a> </h4>
+                <h4><small>Title: </small><a href="{% url "maps" txt.id  1 %}">{{ txt.Data_title }}</a> </h4>
 
             </div>
 
@@ -36,7 +36,7 @@
     </div>
     <!--блок, отвечающий за пагинацию--->
 
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-lg-offset-2">
             <div class="row">
             <ul class="pagination">
                 {% if texts.has_previous %}
@@ -71,3 +71,4 @@
     transition: 0.3s;
 }</style>
 {%  endblock %}
+

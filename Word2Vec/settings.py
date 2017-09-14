@@ -18,7 +18,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
-TASK_UPLOAD_FILE_MAX_SIZE = "5242880"
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '@%f+@fq)*-7g6t*s0@w(mie#tr6u-7+b-rf5#5svu3^(+3nh6r'
 
@@ -55,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'WV',
     'loginsys',
+    'api',
 
     ]
 

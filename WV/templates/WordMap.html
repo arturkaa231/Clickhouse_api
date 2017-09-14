@@ -8,25 +8,76 @@
         {{ script| safe }}
 {% endblock %}
 {% block Mapbody %}
+    <input  id="Data_id" hidden="" type="text" value="{{ Data_id  }}" />
     <div class="container-fluid">
         <!-- INSERT DIVS HERE -->
         <div id="widget" class="row ">
-            <div class="col-lg-offset-7 btn-group">
 
-                     <a class="btn btn-primary" href="{%  url "options" Data_id  %}" >Build Map with another parameters</a>
+            <div class="col-lg-offset-1 btn-group">
 
-
+                     <a class="btn btn-primary" href="{%  url "options" Data_id  %}" >Build Map with another  model-parameters</a>
+                <a class="btn btn-primary" href="{%  url "imageoptions" Data_id Opt_id   %}" >Build Map with another image-parameters</a>
                     <a class="btn btn-primary" href="{%  url "DownloadedTexts" 1  %}" >Downloaded texts</a>
 
+
             </div>
+<a class="btn btn-success" href="{%  url "downloadtext" Data_id  %}" >Download file with vectors</a>
         </div>
     <div  class="row">
+        <div id="" class="col-lg-5">
 
-        <div id="" class="col-lg-4">
             {{ div|safe }}
+
+
         </div>
+        <div class="col-lg-2 col-lg-offset-5">
+           <form role="form" action="{% url 'centroids' Data_id Opt_id Img_id %}" method="post">
+    {% csrf_token %}
 
+
+    <label>Enter centroids ({{ num_clusters }}):</label>
+    <input  class="form-control" {{ form.centroids }}
+           </br>
+
+    <input type="submit" value="Enter" />
+</form>
+{% if error %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+            {% endif %}           
+        </br>
+   <form role="form" action="{% url 'minfreq' Data_id Opt_id Img_id %}" method="post">
+    {% csrf_token %}
+
+
+    <label>Enter the minimum frequency:</label>
+    <input  class="form-control" {{ form3.freq }}
+           </br>
+
+    <input type="submit" value="Enter" />
+</form>
+        </br>
+            <form role="form"  method="post" id="post-form">
+    {% csrf_token %}
+    <label>Enter a word from vocabulary :</label>
+    <input id="word"  class="form-control" {{ form2.word }}
+           </br>
+
+    <input  type="submit" value="Find similar words" />
+            </br> <span id="similarwords1"> </span>
+                </br> <span id="similarwords2"> </span>
+                </br> <span id="similarwords3"> </span>
+                </br> <span id="similarwords4"> </span>
+                </br> <span id="similarwords5"> </span>
+                </br> <span id="similarwords6"> </span>
+                </br> <span id="similarwords7"> </span>
+
+</form>
+
+            </div>
     </div>
     </div>
-
+<script type="text/javascript" src="{% static "AjaxSimilar.js" %}"></script>
     {% endblock %}
+

@@ -1,58 +1,61 @@
 {% extends 'main.html' %}
 {% load staticfiles %}
 {% block maps %}
-
+<div class="col-lg-offset-2">
     <h3>Select parameters for the text: "{{ text.Data_title }}"</h3>
     {% if options %}
     <h5><a class="btn btn-primary" href="{%  url "options" Data_id  %}">Build Map with another parameters</a></h5>
+        </div>
 </br>
-    <div class="row">
-        <div class="col-lg-9" >
+<div class="row">
+        <div class="col-lg-7 col-lg-offset-2" >
         <div class="well homefull">
             <div class="row">
-                <div class="col-lg-6"><h5><strong>Parameters(select  to edit picture):</strong></h5></div>
+                <div class="col-lg-4"><h5><strong>Map Parameters(select  to edit model):</strong></h5></div>
                 <div class="col-lg-6"><h5><strong>Map(select to popup picture):</strong></h5></div>
             </div>
 
            {% for opt in options %}
 
-                <div class=" well row">
-                    <div class="col-lg-6"><a href="{% url "showmap" opt.id Data_id%}"> size={{ opt.size }}    window={{ opt.win }}    minimal count of words={{ opt.minc }}           </a></div>
-                    {% if opt.img %}
-                    <img id="myImg" src="{% static opt.img %}" width="600" height="400">
+                <div class=" well">
+
+                <div class="row">
+                    <div class="col-lg-4"><a href="{% url "images"  Data_id opt.id 1%}"> size={{ opt.size }} </br>   window={{ opt.win }}  </br>  minimal count of words={{ opt.minc }} </br> algorithm  {% if opt.cbow %}  </br> C-BOW {% else %}Skip-gram{% endif %}      </br></br></br></br> </br></br> </br></br></br></br> </br></br> </br></br></br>    <a class="btn btn-primary" href="{% url 'deleteopt'  opt.id Data_id %}">Delete</a> </a></div>
+                    {% if opt.preview %}
+                    <img id="myImg" alt="there is no picture yet, you can choose a preview" src="{% static  opt.preview %}" width="600" height="400">
                     <div id="myModal" class="modal">
                         <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
                         <img class="modal-content" id="img01">
                         <div id="caption"></div>
 
                     </div>
-                </div>
+
+
                {% else %}
-                        <h4>there is no picture yet</h4>
+
+                        <div><h4>there is no picture yet, you can choose a preview.</h4></div>
+
                         {% endif %}
+</div></div>
             {% endfor %}
+
         </div>
         </div>
     </div>
 
-    {% else %}
-        <div class="row">
-            <div class="col-lg-3" >
-               <div class="alert alert-info">
-    Set of parameters were not selected, you can  <a href="{%  url "options" Data_id  %}"> choose one</a>
-</div>
-            </div>
-        </div>
 
-    {% endif %}
 
-<div class="col-lg-5">
+
+
+
+<div class="row">
+<div class="col-lg-5 col-lg-offset-2">
     <!--блок, отвечающий за пагинацию--->
      <div class="row">
         <div class="large-6 large-offset-5 columns">
             <ul class="pagination">
                 {% if options.has_previous %}
-                    <li class="arrow"><a href="/{{ Data_id }}/{{ options.previous_page_number }}/">&laquo;</a> </li>
+                    <li class="arrow"><a href="/maps/{{ Data_id }}/{{ options.previous_page_number }}/">&laquo;</a> </li>
                 {% else %}
                     <li class="disabled"><a href="">&laquo;</a> </li>
                 {% endif %}
@@ -72,6 +75,17 @@
         </div>
     </div>
 </div>
+    </div>
+    {% else %}
+        <div class="row">
+            <div class="col-lg-3" >
+               <div class="alert alert-info">
+    Set of parameters were not selected, you can  <a href="{%  url "options" Data_id  %}"> choose one</a>
+</div>
+            </div>
+        </div>
+
+    {% endif %}
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -185,3 +199,4 @@ span.onclick = function() {
 }
             </style>
 {%  endblock %}
+

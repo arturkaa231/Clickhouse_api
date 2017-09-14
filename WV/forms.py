@@ -1,25 +1,28 @@
-from django.forms import ModelForm, fields,forms
-from WV.models import Data,Options,Tags
+from django.forms import ModelForm, fields
+from WV.models import Data,Options,Tags,ImageOptions
 from Word2Vec import settings
 from uuid import uuid4
 import os.path
-
+from django  import forms
 class EnterOptions(ModelForm):
     class Meta:
         model = Options
-        fields = ['size','win','minc']
-
+        fields = ['size','win','minc','cbow','skipgr']
     def __str__(self):
         return self.as_div()
 
-        # run the parent validation first
-
+        # run the parent validation firs
+class EnterImageOptionsForm(ModelForm):
+    class Meta:
+        model = ImageOptions
+        fields = ['num_clusters','num_neighbors']
+    def __str__(self):
+        return self.as_div()
 
 class EnterData(ModelForm):
     class Meta:
         model=Data
         fields = ['Data_title','Data_xls']
-
     def __str__(self):
         return self.as_div()
 
@@ -31,8 +34,6 @@ class EnterData(ModelForm):
             return filename
         cleaned_data = self.cleaned_data
         cleaned_data['Data_xls'].name=ChangeName(filename= cleaned_data['Data_xls'].name)
-
-
         return cleaned_data
     def is_valid(self):
 
@@ -78,4 +79,11 @@ class TagsForm(ModelForm):
         # run the parent validation first
         else:
             return True
+#Форма для добавления центроид
+class CentroidForm(forms.Form):
+    centroids= forms.CharField()
+class SimilarWordForm(forms.Form):
+    word= forms.CharField()
+class MinFrequencyWordForm(forms.Form):
+    freq= forms.IntegerField()
 

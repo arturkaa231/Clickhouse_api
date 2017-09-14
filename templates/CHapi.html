@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+    <link rel="stylesheet" href="https://maxcdn.bo  otstrapcdn.com/bootstrap/3.3.7/css/b.." integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<form role="form" method="post" id="post-form">
+    {% csrf_token%}
+    <label>Структура отчета(flat или tree): </label></br>
+    <input id="structure" class="form-control"{{form.structure}}</br>
+    <label>Сортировать по: </label></br>
+    <input id="order_by" class="form-control"{{form.order_by}}</br>
+    <label>Порядок сортировки: </label></br>
+    <input id="sort_order" class="form-control"{{form.sort_order}}</br>
+    <label>Количество визитов и действий: </label></br>
+    <input id="nb_visits" class="form-control"{{form.nb_visits}}
+    <input id="nb_actions" class="form-control"{{form.nb_actions}}
+    </br>
+    <label>Поля(названия полей, разделенные запятыми): </label></br>
+    <input id="dimensions" class="form-control"{{form.dimensions}}</br>
+    <label>Лимит:</label></br>
+    <input id="limit" class="form-control"{{form.limit}}</br>
+    <label>Сдвиг:</label></br>
+    <input id="offset" class="form-control"{{form.offset}}</br>
+    <label>Временные рамки(гггг-мм-дд):</label></br>
+    <input id="date1" class="form-control"{{form.date1}}
+    <input id="date2" class="form-control"{{form.date2}}</br>
+    <label>Фильтр: </label></br>
+    <input id="filt" class="form-control"{{form.filt}}</br>
+    <input id="submit" type="submit"/>
+<span id="results"></span>
+</form>
+    
+</body>
+<script
+              src="https://code.jquery.com/jquery-3.2.1.js"
+              integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+              crossorigin="anonymous"></script>
+<script>
+    $('#post-form').on('submit', function(event){
+    event.preventDefault();
+    create_post();
+    });
+
+    function create_post() {
+    
+    $.ajax({
+    url : "/api/stat/", // the endpoint
+    type : "POST", // http met
+    data :{"structure":$('#structure').val(),"order_by": $('#order_by').val(),"sort_order": $('#sort_order').val(), "metrics": [$('#nb_visits').val(),$('#nb_actions').val()],"dimensions": ($('#dimensions').val()).split(','),"limit": $('#limit').val(),"offset": $('#offset').val(),"date1": $('#date1').val(),"date2": $('#date2').val(),"filt": $('#filt').val()}, // data sent with the post request
+    // handle a successful response
+    success : function(json) {
+    $('#results').text(json)
+    // remove the value from the input
+    console.log("success"); // another sanity check
+    },
+
+    // handle a non-successful response
+    error : function(){
+        alert('Value error');
+    }
+    });
+    };
+
+
+
+</script>
+
+

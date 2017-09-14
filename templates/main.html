@@ -17,22 +17,24 @@
 <script type="text/javascript" src="{% static "dropdown.js"%}"></script>
 <script type="text/javascript" src="{% static "image.js"%}"></script>
 
+
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
+        <div class="row"  >
+
     <div class="navbar-header ">
+        <div class="col-lg-1 col-lg-offset-9 ">
         <a href="r'^'" class="navbar-brand"> Word2Vec</a>
+        </div>
     </div>
 
 
            {%  if username %}
-     <div class="container-fluid">
-        <div class="row"  >
-            <div class="col-lg-1 col-lg-offset-9 ">
 
-
+            <div class="col-lg-1 col-lg-offset-4 ">
                 <div class="btn-group">
                      <button class="btn btn-link dropdown-toggle " data-toggle="dropdown">Actions<span class="caret"></span></button>
                     <ul class="dropdown-menu">
@@ -53,35 +55,28 @@
 
                 </ul>
                </div>
+
+            {% else  %}
+                <div class="col-lg-offset-8"><ul class="nav navbar-nav"> <li><a href="{% url "login" %}">Log in</a></li></ul></div>
+            {% endif %}
         </div>
      </div>
-            {% else  %}
-                <div class="col-lg-offset-11"><ul class="nav navbar-nav"> <li><a href="{% url "login" %}">Log in</a></li></ul></div>
-            {% endif %}
-
-
-
-    </div>
 </nav>
-
 <!-- сдвиг содержмого на середину с помощью foundation--->
 {% block downtext %}{% endblock %}
 {% block filttexts %}{% endblock %}
     <div  class="container-fluid">
      {% block maps %}{% endblock %}
+    {% block images %}{% endblock %}
 
      {% block EnterData %}{% endblock %}
      {% block EnterOptions %}{% endblock %}
-
+     {% block EnterImageOptions %}{% endblock %}
 
         {% block Mapbody %}{% endblock %}
         {% block login %}{% endblock %}
 
-
-
-
-
     </div>
-
 </body>
 </html>
+

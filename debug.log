@@ -52,8 +52,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
     response = self.process_exception_by_middleware(e, request)
   File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/opt/WebWord2Vec/WV/views.py", line 250, in Enteroptions
+    response = wrapped_callback(request, *callback_args, **callba  File "/opt/WebWord2Vec/WV/views.py", line 250, in Enteroptions
     int(request.POST['minc'])))
   File "/opt/WebWord2Vec/WV/views.py", line 245, in Map
     BuildHtmlMap()
@@ -3284,3 +3283,1827 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 562, in invalid_block_tag
     get_text_list(["'%s'" % p for p in parse_until]),
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 26: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+Internal Server Error: /filteredtexts/1/111/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 294, in FilteredTexts
+    return redirect(reverse('FilteredTexts',args=[1,request.POST['tg']]))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'FilteredTexts' with arguments '(1, '1   ')' and keyword arguments '{}' not found. 1 pattern(s) tried: ['filteredtexts/(?P<page_number>\\d+)/(?P<tags>\\S+)/$']
+Internal Server Error: /maps/320/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 318, in Maps
+    return render_to_response('maps.html',args)
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 515, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 533, in extend_nodelist
+    token, '%r must be the first tag in the template.' % node,
+django.template.exceptions.TemplateSyntaxError: <ExtendsNode: extends 'main.html'> must be the first tag in the template.
+Internal Server Error: /options/323/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 248, in Enteroptions
+    int(request.POST['minc'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 237, in Map
+    model = Word2Vec(Words, size=size, window=win, min_count=minc)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 503, in __init__
+    self.build_vocab(sentences, trim_rule=trim_rule)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 579, in build_vocab
+    self.finalize_vocab(update=update)  # build tables & arrays
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 752, in finalize_vocab
+    self.reset_weights()
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1165, in reset_weights
+    self.wv.syn0 = empty((len(self.wv.vocab), self.vector_size), dtype=REAL)
+ValueError: negative dimensions are not allowed
+Internal Server Error: /options/324/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 248, in Enteroptions
+    int(request.POST['minc'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 244, in Map
+    BuildHtmlMap()
+  File "/opt/WebWord2Vec/WV/views.py", line 165, in BuildHtmlMap
+    s1 = ColumnDataSource(data=dict(x=list(X[:, 0]), y=list(X[:, 1]), words=list(model.wv.vocab.keys()),
+IndexError: index 1 is out of bounds for axis 1 with size 1
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 2, in <module>
+    from WV import views
+  File "/opt/WebWord2Vec/WV/views.py", line 26, in <module>
+    from sklearn.datasets import fetch_20newsgroups
+ImportError: No module named 'sklearn'
+Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 2, in <module>
+    from WV import views
+  File "/opt/WebWord2Vec/WV/views.py", line 26, in <module>
+    from sklearn.datasets import fetch_20newsgroups
+ImportError: No module named 'sklearn'
+Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 2, in <module>
+    from WV import views
+  File "/opt/WebWord2Vec/WV/views.py", line 26, in <module>
+    from sklearn.datasets import fetch_20newsgroups
+ImportError: No module named 'sklearn'
+Internal Server Error: /options/331/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 251, in Enteroptions
+    int(request.POST['minc'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 242, in Map
+    pca = decomposition.PCA(n_components=2)
+NameError: name 'decomposition' is not defined
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 2, in <module>
+    from WV import views
+  File "/opt/WebWord2Vec/WV/views.py", line 169
+    freq.append(model.wv.vocab[i].count)
+       ^
+IndentationError: expected an indented block
+Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 2, in <module>
+    from WV import views
+  File "/opt/WebWord2Vec/WV/views.py", line 169
+    freq.append(model.wv.vocab[i].count)
+       ^
+IndentationError: expected an indented block
+Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 2, in <module>
+    from WV import views
+  File "/opt/WebWord2Vec/WV/views.py", line 169
+    freq.append(model.wv.vocab[i].count)
+       ^
+IndentationError: expected an indented block
+expected an indented block
+Internal Server Error: /options/332/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 266, in Enteroptions
+    int(request.POST['minc'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 242, in Map
+    WL = ReadXls(xls)
+  File "/opt/WebWord2Vec/WV/views.py", line 112, in ReadXls
+    wb = xlrd.open_workbook(os.path.join(xls))
+  File "/usr/local/lib/python3.5/dist-packages/xlrd/__init__.py", line 395, in open_workbook
+    with open(filename, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/WebWord2Vec/media/./057f2b0c1f4a438cab905b4fecaa47a3.xlsx'
+Internal Server Error: /options/332/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 266, in Enteroptions
+    int(request.POST['minc'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 242, in Map
+    WL = ReadXls(xls)
+  File "/opt/WebWord2Vec/WV/views.py", line 112, in ReadXls
+    wb = xlrd.open_workbook(os.path.join(xls))
+  File "/usr/local/lib/python3.5/dist-packages/xlrd/__init__.py", line 395, in open_workbook
+    with open(filename, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/WebWord2Vec/media/./057f2b0c1f4a438cab905b4fecaa47a3.xlsx'
+Internal Server Error: /options/333/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 266, in Enteroptions
+    int(request.POST['minc'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 242, in Map
+    WL = ReadXls(xls)
+  File "/opt/WebWord2Vec/WV/views.py", line 112, in ReadXls
+    wb = xlrd.open_workbook(os.path.join(xls))
+  File "/usr/local/lib/python3.5/dist-packages/xlrd/__init__.py", line 395, in open_workbook
+    with open(filename, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/WebWord2Vec/media/./6dd55b5aa5db4f6b883c2ce786be5cc5.xlsx'
+Not Found: /admin/WV/data/336/delete/
+Not Found: /admin/WV/data/337/delete/
+Not Found: /admin/WV/data/339/delete/
+Forbidden (CSRF cookie not set.): /command.php
+Forbidden (CSRF cookie not set.): /hndUnblock.cgi
+Internal Server Error: /maps/342/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 406, in Maps
+    all_images.append(opt.image.all().last().img)
+AttributeError: 'NoneType' object has no attribute 'img'
+Internal Server Error: /maps/341/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 406, in Maps
+    all_images.append(opt.image.all().last().img)
+AttributeError: 'NoneType' object has no attribute 'img'
+Internal Server Error: /maps/340/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 406, in Maps
+    all_images.append(opt.image.all().last().img)
+AttributeError: 'NoneType' object has no attribute 'img'
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 60, in MainPage
+    tg=Tags(text_id=Data.objects.get(Data_xls=request.FILES['Data_xls']).id,tg=i)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Data matching query does not exist.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 60, in MainPage
+    tg=Tags(text_id=Data.objects.get(Data_xls=request.FILES['Data_xls']).id,tg=i)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Data matching query does not exist.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 60, in MainPage
+    tg=Tags(text_id=Data.objects.get(Data_xls=('./'+request.FILES['Data_xls'])).id,tg=i)
+TypeError: Can't convert 'InMemoryUploadedFile' object to str implicitly
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 2, in <module>
+    from WV import views
+  File "/opt/WebWord2Vec/WV/views.py", line 60
+    tg=Tags(text_id=Data.objects.get(Data_xls=('./'+str(request.FILES['Data_xls')])).id,tg=i)
+                                                                                ^
+SyntaxError: invalid syntax
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 2, in <module>
+    from WV import views
+  File "/opt/WebWord2Vec/WV/views.py", line 60
+    tg=Tags(text_id=Data.objects.get(Data_xls=('./'+str(request.FILES['Data_xls')])).id,tg=i)
+                                                                                ^
+SyntaxError: invalid syntax
+Forbidden (CSRF cookie not set.): /command.php
+Internal Server Error: /images/249/347/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 422, in Images
+    args['opt']=Options.objects.get(id=Opt_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Options matching query does not exist.
+Internal Server Error: /images/249/347/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 422, in Images
+    args['opt']=Options.objects.get(id=Opt_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Options matching query does not exist.
+Internal Server Error: /images/347/249/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'Word2Vec.setpreview' with arguments '('347', 249, <ImageFieldFile: fcf0dbb323d940bd9554ce4eeae4aa3a.png>)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 416, in Images
+    return render_to_response('images.html',args)
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 686, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'setpreview' with arguments '('347', 249, <ImageFieldFile: fcf0dbb323d940bd9554ce4eeae4aa3a.png>)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+Internal Server Error: /images/347/249/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 15, in <module>
+    url(r'^setpreview/(?P<Data_id>\d+)/(?P<Opt_id>\d+)/(?P<img>\S+)/$', views.SetPreview, name='setpreview'),
+AttributeError: module 'WV.views' has no attribute 'SetPreview'
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'^', include('WV.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/WV/urls.py", line 15, in <module>
+    url(r'^setpreview/(?P<Data_id>\d+)/(?P<Opt_id>\d+)/(?P<img>\S+)/$', views.SetPreview, name='setpreview'),
+AttributeError: module 'WV.views' has no attribute 'SetPreview'
+Internal Server Error: /options/266/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 86, in Enteroptions
+    options.text=Data.objects.get(id=Data_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Data matching query does not exist.
+Internal Server Error: /options/266/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 86, in Enteroptions
+    options.text=Data.objects.get(id=Data_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Data matching query does not exist.
+Internal Server Error: /options/266/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 86, in Enteroptions
+    options.text=Data.objects.get(id=Data_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Data matching query does not exist.
+Internal Server Error: /options/266/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 86, in Enteroptions
+    options.text=Data.objects.get(id=Data_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Data matching query does not exist.
+Internal Server Error: /options/266/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 86, in Enteroptions
+    options.text=Data.objects.get(id=Data_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Data matching query does not exist.
+Internal Server Error: /options/266/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 86, in Enteroptions
+    options.text=Data.objects.get(id=Data_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Data matching query does not exist.
+Forbidden (CSRF cookie not set.): /hndUnblock.cgi
+Forbidden (CSRF cookie not set.): /
+Internal Server Error: /options/271/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 86, in Enteroptions
+    options.text=Data.objects.get(id=Data_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: Data matching query does not exist.
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 638, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 638, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 638, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 638, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /minfreq/351/281/35/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 793, in MinFrequencyWord
+    Map(int(imgopt.num_clusters),int(request.POST['freq'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 756, in Map
+    model = Word2Vec.load(data.Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /centroids/352/284/38/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 482, in Centroids
+    imgopt =ImageOptions.objects.get(id=Img_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: ImageOptions matching query does not exist.
+Forbidden (CSRF cookie not set.): /command.php
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 647, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /centroids/354/286/41/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'Word2Vec.options' with arguments '('',)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 500, in Centroids
+    args)
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 686, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'options' with arguments '('',)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['options/(?P<Data_id>\\d+)/$']
+Internal Server Error: /centroids/348/254/7/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 484, in Centroids
+    model = Word2Vec.load(data.Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /minfreq/348/254/7/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 821, in MinFrequencyWord
+    Map(int(num_clusters),int(request.POST['freq'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 784, in Map
+    model = Word2Vec.load(data.Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 662, in SimilarWords
+    model=Word2Vec.load(Data.objects.get(id=int(Data_id)).Data_model.name)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 1412, in load
+    model = super(Word2Vec, cls).load(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 274, in load
+    compress, subname = SaveLoad._adapt_by_suffix(fname)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/utils.py", line 337, in _adapt_by_suffix
+    if fname.endswith('.gz') or fname.endswith('.bz2'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+Internal Server Error: /showmap/348/254/7/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 441, in Showmap
+    script=ImageOptions.objects.get(id=Img_id).script
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+WV.models.DoesNotExist: ImageOptions matching query does not exist.
+Internal Server Error: /similarwords/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 665, in SimilarWords
+    response_data['word1']=model.wv.most_similar(word)[0]
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/keyedvectors.py", line 335, in most_similar
+    mean.append(weight * self.word_vec(word, use_norm=True))
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/keyedvectors.py", line 288, in word_vec
+    raise KeyError("word '%s' not in vocabulary" % word)
+KeyError: "word '' not in vocabulary"
+Internal Server Error: /centroids/348/287/42/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'Word2Vec.options' with arguments '('',)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 500, in Centroids
+    args)
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 686, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'options' with arguments '('',)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['options/(?P<Data_id>\\d+)/$']
+Forbidden (CSRF cookie not set.): /hndUnblock.cgi
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Internal Server Error: /imageoptions/355/289/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'num_neighbors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 340, in EnterImageOptions
+    return render_to_response('WordMap.html',Map(os.path.join(MEDIA_ROOT,data.Data_xls.name),opt.size,opt.win,opt.minc,alg,int(request.POST['num_clusters']),int(request.POST['num_neighbors'])))
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'num_neighbors'"
+Internal Server Error: /imageoptions/355/289/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'num_neighbors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 340, in EnterImageOptions
+    return render_to_response('WordMap.html',Map(os.path.join(MEDIA_ROOT,data.Data_xls.name),opt.size,opt.win,opt.minc,alg,int(request.POST['num_clusters']),int(request.POST['num_neighbors'])))
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'num_neighbors'"
+Internal Server Error: /imageoptions/348/287/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 340, in EnterImageOptions
+    return render_to_response('WordMap.html',Map(os.path.join(MEDIA_ROOT,data.Data_xls.name),opt.size,opt.win,opt.minc,alg,int(request.POST['num_clusters']),int(request.POST['num_neighbors'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 307, in Map
+    model = Word2Vec(Words, size=size, window=win, min_count=minc,sg=alg)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 505, in __init__
+    start_alpha=self.alpha, end_alpha=self.min_alpha)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 832, in train
+    raise RuntimeError("you must first build vocabulary before training the model")
+RuntimeError: you must first build vocabulary before training the model
+Internal Server Error: /imageoptions/348/287/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 340, in EnterImageOptions
+    return render_to_response('WordMap.html',Map(os.path.join(MEDIA_ROOT,data.Data_xls.name),opt.size,opt.win,opt.minc,alg,int(request.POST['num_clusters']),int(request.POST['num_neighbors'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 307, in Map
+    model = Word2Vec(Words, size=size, window=win, min_count=minc,sg=alg)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 505, in __init__
+    start_alpha=self.alpha, end_alpha=self.min_alpha)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 832, in train
+    raise RuntimeError("you must first build vocabulary before training the model")
+RuntimeError: you must first build vocabulary before training the model
+Internal Server Error: /imageoptions/348/287/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 340, in EnterImageOptions
+    return render_to_response('WordMap.html',Map(os.path.join(MEDIA_ROOT,data.Data_xls.name),opt.size,opt.win,opt.minc,alg,int(request.POST['num_clusters']),int(request.POST['num_neighbors'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 307, in Map
+    model = Word2Vec(Words, size=size, window=win, min_count=minc,sg=alg)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 505, in __init__
+    start_alpha=self.alpha, end_alpha=self.min_alpha)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 832, in train
+    raise RuntimeError("you must first build vocabulary before training the model")
+RuntimeError: you must first build vocabulary before training the model
+Internal Server Error: /imageoptions/350/276/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 340, in EnterImageOptions
+    return render_to_response('WordMap.html',Map(os.path.join(MEDIA_ROOT,data.Data_xls.name),opt.size,opt.win,opt.minc,alg,int(request.POST['num_clusters']),int(request.POST['num_neighbors'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 307, in Map
+    model = Word2Vec(Words, size=size, window=win, min_count=minc,sg=alg)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 505, in __init__
+    start_alpha=self.alpha, end_alpha=self.min_alpha)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 832, in train
+    raise RuntimeError("you must first build vocabulary before training the model")
+RuntimeError: you must first build vocabulary before training the model
+Internal Server Error: /imageoptions/348/287/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 340, in EnterImageOptions
+    return render_to_response('WordMap.html',Map(os.path.join(MEDIA_ROOT,data.Data_xls.name),opt.size,opt.win,opt.minc,alg,int(request.POST['num_clusters']),int(request.POST['num_neighbors'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 307, in Map
+    model = Word2Vec(Words, size=size, window=win, min_count=minc,sg=alg)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 505, in __init__
+    start_alpha=self.alpha, end_alpha=self.min_alpha)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 832, in train
+    raise RuntimeError("you must first build vocabulary before training the model")
+RuntimeError: you must first build vocabulary before training the model
+Internal Server Error: /imageoptions/348/291/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/WebWord2Vec/WV/views.py", line 340, in EnterImageOptions
+    return render_to_response('WordMap.html',Map(os.path.join(MEDIA_ROOT,data.Data_xls.name),opt.size,opt.win,opt.minc,alg,int(request.POST['num_clusters']),int(request.POST['num_neighbors'])))
+  File "/opt/WebWord2Vec/WV/views.py", line 307, in Map
+    model = Word2Vec(Words, size=size, window=win, min_count=minc,sg=alg)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 505, in __init__
+    start_alpha=self.alpha, end_alpha=self.min_alpha)
+  File "/usr/local/lib/python3.5/dist-packages/gensim/models/word2vec.py", line 832, in train
+    raise RuntimeError("you must first build vocabulary before training the model")
+RuntimeError: you must first build vocabulary before training the model
+Forbidden (CSRF cookie not set.): /command.php
+Forbidden (CSRF cookie not set.): /hndUnblock.cgi
+Forbidden (CSRF cookie not set.): /command.php
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /hndUnblock.cgi
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /wp-admin/admin-ajax.php
+Forbidden (CSRF cookie not set.): /wp-admin/admin-ajax.php
+Forbidden (CSRF cookie not set.): /command.php
+Forbidden (CSRF cookie not set.): /cgi-bin/php
+Internal Server Error: /api/stat/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/WebWord2Vec/api/views.py", line 65, in CHapi
+    resp=json.loads(get_clickhouse_data(q,'http://85.143.172.199:8123'))['data']
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'api/',include('api.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/api/urls.py", line 2, in <module>
+    from api import views
+  File "/opt/WebWord2Vec/api/views.py", line 5, in <module>
+    from CH.CHmodels import Visits,Hits,parse_clickhouse_xml
+ImportError: No module named 'CH'
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'api/',include('api.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/api/urls.py", line 2, in <module>
+    from api import views
+  File "/opt/WebWord2Vec/api/views.py", line 5, in <module>
+    from CH.CHmodels import Visits,Hits,parse_clickhouse_xml
+ImportError: No module named 'CH'
+Internal Server Error: /downloadedtexts/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/Word2Vec/urls.py", line 23, in <module>
+    url(r'api/',include('api.urls')),
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/urls/__init__.py", line 52, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/WebWord2Vec/api/urls.py", line 2, in <module>
+    from api import views
+  File "/opt/WebWord2Vec/api/views.py", line 5, in <module>
+    from CH.CHmodels import Visits,Hits,parse_clickhouse_xml
+ImportError: No module named 'CH'

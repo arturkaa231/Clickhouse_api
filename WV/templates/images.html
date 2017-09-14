@@ -1,0 +1,196 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% block images %}
+
+<div class="col-lg-offset-2">
+    <h3>Select image-parameters for the model: </br> <h4>size={{ opt.size }} </br>   window={{ opt.win }}  </br>    minimal count of words={{ opt.minc }}  </br>  algorithm  {% if opt.cbow %} C-BOW {% else %}Skip-gram{% endif %}    </h4>  </h3>
+    {% if images %}
+        <div id="widget" class="row "><div class="btn-group"><a class="btn btn-primary" href="{%  url "maps" Data_id 1 %}">Back to model-parameters</a><a class="btn btn-primary" href="{%  url "imageoptions" Data_id opt.id %}">Build Map with another image-parameters</a></div></div>
+        </div>
+</br>
+    <div class="row">
+        <div class="col-lg-7 col-lg-offset-2" >
+        <div class="well homefull">
+            <div class="row">
+                <div class="col-lg-4"><h5><strong>Image Parameters(select  to edit picture):</strong></h5></div>
+                <div class="col-lg-6"><h5><strong>Map(select to popup picture):</strong></h5></div>
+            </div>
+
+           {% for img in images %}
+
+                <div class=" well">
+
+                <div class="row">
+                    <div class="col-lg-4"><a href="{% url "showmap"  Data_id opt.id img.id %}"> Number of clusters={{ img.num_clusters }} </br>Number of neighbors={{ img.num_neighbors }}           </a></div>
+                    {% if img.img %}
+                    <img id="myImg" src="{% static  img.img %}" width="600" height="400">
+                    <div id="myModal" class="modal">
+                        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+
+                    </div>
+                       </div>
+                         <a class="btn btn-primary" href="{% url 'deleteimg' Data_id opt.id img.id  %}">Delete  </a> <a class="btn btn-primary" href="{% url 'setpreview' Data_id opt.id img.img %}">   Set as preview</a>
+                </div>
+               {% else %}
+                        <h4>there is no picture yet</h4>
+                        {% endif %}
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+
+
+<div class="row">
+<div class="col-lg-5 col-lg-offset-2">
+    <!--блок, отвечающий за пагинацию--->
+     <div class="row">
+        <div class="large-6 large-offset-5 columns">
+            <ul class="pagination">
+                {% if images.has_previous %}
+                    <li class="arrow"><a href="/images/{{ Data_id }}/{{ opt.id }}/{{ images.previous_page_number }}/">&laquo;</a> </li>
+                {% else %}
+                    <li class="disabled"><a href="">&laquo;</a> </li>
+                {% endif %}
+                {% for page in images.paginator.page_range %}
+                    {% if page == images.number %}
+                        <li class="active"><a href="/images/{{ Data_id }}/{{ opt.id }}/{{ page }}/">{{ page }}</a></li>
+                    {% else %}
+                        <li><a href="/images/{{ Data_id }}/{{ opt.id }}/{{ page }}/">{{ page }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if images.has_next %}
+                    <li class="arrow"><a href="/images/{{ Data_id }}/{{ opt.id }}/{{ images.next_page_number }}/">&raquo;</a></li>
+                {% else %}
+                     <li class="disabled"><a href="">&raquo;</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+    </div>
+    {% else %}
+        <div class="row">
+            <div class="col-lg-3" >
+               <div class="alert alert-info">
+    Image parameters were not selected, you can  <a href="{%  url "imageoptions" Data_id opt.id  %}"> choose one</a>
+</div>
+            </div>
+        </div>
+
+    {% endif %}
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+</script>
+    <style>
+                .well.homefull{
+                    background: rgba(0, 0, 0, 0.4);
+                }
+                #myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+            </style>
+{%  endblock %}
+
