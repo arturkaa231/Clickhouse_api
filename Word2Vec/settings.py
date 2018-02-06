@@ -55,6 +55,9 @@ INSTALLED_APPS = [
     'WV',
     'loginsys',
     'api',
+    'spyrecorder',
+    'hac',
+    'DSS',
 
     ]
 

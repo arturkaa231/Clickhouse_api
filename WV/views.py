@@ -227,7 +227,7 @@ def EnterImageOptions(request,Data_id,Opt_id):
                     s1 = ColumnDataSource(data=dict(x=X[:, 0], y=X[:, 1], words=list(model.wv.vocab)))
                     # s1 = ColumnDataSource(data=dict(x=list(X_tsne[:, 0]), y=list(X_tsne[:, 1]), words=sentence,color=['#000000' for i in range(len(sentence))]))
                     p1 = figure(tools="pan,lasso_select,wheel_zoom,undo,reset,save,tap", title="Select Here",
-                                plot_width=1450, plot_height=800)
+                                plot_width=1000, plot_height=600)
                     p1.scatter(x='x', y='y', size=10, source=s1, alpha=0)
 
                     def lbset(i, j, size, tcol):
@@ -538,7 +538,7 @@ def Centroids(request,Data_id,Opt_id,Img_id):
                     s1 = ColumnDataSource(data=dict(x=X[:, 0], y=X[:, 1], words=list(model.wv.vocab)))
                     # s1 = ColumnDataSource(data=dict(x=list(X_tsne[:, 0]), y=list(X_tsne[:, 1]), words=sentence,color=['#000000' for i in range(len(sentence))]))
                     p1 = figure(tools="pan,lasso_select,wheel_zoom,undo,reset,save,tap", title="Select Here",
-                                plot_width=1450, plot_height=800)
+                                plot_width=1000, plot_height=600)
                     p1.scatter(x='x', y='y', size=10, source=s1, alpha=0)
 
                     def lbset(i, j, size, tcol):
@@ -710,7 +710,7 @@ def MinFrequencyWord(request,Data_id,Opt_id,Img_id):
                     s1 = ColumnDataSource(data=dict(x=X[:, 0], y=X[:, 1], words=words))
                     # s1 = ColumnDataSource(data=dict(x=list(X_tsne[:, 0]), y=list(X_tsne[:, 1]), words=sentence,color=['#000000' for i in range(len(sentence))]))
                     p1 = figure(tools="pan,lasso_select,wheel_zoom,undo,reset,save,tap", title="Select Here",
-                                plot_width=1450, plot_height=800)
+                                plot_width=1000, plot_height=600)
                     p1.scatter(x='x', y='y', size=10, source=s1, alpha=0)
 
                     def lbset(i, j, size, tcol):

@@ -21,6 +21,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include('loginsys.urls')),
     url(r'api/',include('api.urls')),
+    url(r'hac/',include('hac.urls')),
+    url(r'DSS/',include('DSS.urls')),
+    url(r'^spyrecorder/', include('spyrecorder.urls')),
     url(r'^', include('WV.urls')),
 
 ]

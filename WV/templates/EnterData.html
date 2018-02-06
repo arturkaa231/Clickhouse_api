@@ -29,7 +29,7 @@
                         </br>
                         <div id="upskr" class="row">
                             <div class="form-group ">
-                                <div class="col-lg-3"> <span id="skrepka"><img  src="{% static "skrepka.png"%}"width="40px" height="40px"> Upload a file(excel)</span> <span class=""></span></br>
+                                <div class="col-lg-4"> <span id="skrepka"><img  src="{% static "skrepka.png"%}"width="40px" height="40px"> Upload a file(excel)</span> <span class=""></span></br>
                                     <span id="upload" hidden="">{{form_text.Data_xls}}</span>
                                 </div>
                                 <input type="hidden" id="X-Progress-ID" name="X-Progress-ID" value=""/>
@@ -45,7 +45,7 @@
                             <strong>Error</strong> {{ error }}{% endif %}
                         </div>
                     {% else %}
-                        <h3>Please log in or <a href="{%  url 'register'%}">register</a> if you don't have an account</h3>
+                        <h3>Please <a href="{%  url 'login'%}">log in</a>  or <a href="">register</a> if you don't have an account</h3>
                     {% endif %}
                 </div>
             </div>

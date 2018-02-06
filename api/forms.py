@@ -1,15 +1,10 @@
 from django.forms import ModelForm,fields
 from django import forms
 class RequestForm(forms.Form):
-    structure=forms.CharField()
-    order_by=forms.CharField()
-    sort_order=forms.CharField()
-    nb_visits=forms.IntegerField()
-    nb_actions=forms.IntegerField()
-    limit=forms.IntegerField()
-    offset=forms.IntegerField()
-    dimensions=forms.CharField()
-    date1=forms.DateField()
-    date2=forms.DateField()
-    filt=forms.CharField()
-
+	flat=forms.CharField(required=False)
+	sort_order=forms.CharField(required=False)
+	limit=forms.IntegerField(required=False)
+	offset=forms.IntegerField(required=False)
+	dimensions=forms.CharField(required=False)
+	period=forms.DateField(required=False)
+	global_filter=forms.CharField(required=False)

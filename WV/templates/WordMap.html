@@ -11,26 +11,22 @@
     <input  id="Data_id" hidden="" type="text" value="{{ Data_id  }}" />
     <div class="container-fluid">
         <!-- INSERT DIVS HERE -->
-        <div id="widget" class="row ">
-
-            <div class="col-lg-offset-1 btn-group">
-
-                     <a class="btn btn-primary" href="{%  url "options" Data_id  %}" >Build Map with another  model-parameters</a>
-                <a class="btn btn-primary" href="{%  url "imageoptions" Data_id Opt_id   %}" >Build Map with another image-parameters</a>
-                    <a class="btn btn-primary" href="{%  url "DownloadedTexts" 1  %}" >Downloaded texts</a>
-
-
-            </div>
-<a class="btn btn-success" href="{%  url "downloadtext" Data_id  %}" >Download file with vectors</a>
+        <div id="widget" class="row col-lg-9 ">
+            <div class="col-lg-offset-2 btn-group">
+            <a class="btn btn-primary" href="{%  url "options" Data_id  %}" >Build Map with another  model-parameters</a>
+            <a class="btn btn-primary" href="{%  url "imageoptions" Data_id Opt_id   %}" >Build Map with another image-parameters</a>
+            <a class="btn btn-primary" href="{%  url "DownloadedTexts" 1  %}" >Downloaded texts</a>
+            <a class="btn btn-success" href="{%  url "downloadtext" Data_id  %}" >Download file with vectors</a>
+                </div>
         </div>
     <div  class="row">
-        <div id="" class="col-lg-5">
+        <div id="" class="col-lg-5 col col-lg-offset-1">
 
             {{ div|safe }}
 
 
         </div>
-        <div class="col-lg-2 col-lg-offset-5">
+        <div class="col-lg-2 col-lg-offset-4">
            <form role="form" action="{% url 'centroids' Data_id Opt_id Img_id %}" method="post">
     {% csrf_token %}
 
@@ -41,11 +37,11 @@
 
     <input type="submit" value="Enter" />
 </form>
-{% if error %}
+            {% if error %}
                 <div class="alert alert-danger">
                     {{ error }}
                 </div>
-            {% endif %}           
+            {% endif %}
         </br>
    <form role="form" action="{% url 'minfreq' Data_id Opt_id Img_id %}" method="post">
     {% csrf_token %}

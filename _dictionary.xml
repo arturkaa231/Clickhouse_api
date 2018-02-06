@@ -1,0 +1,87 @@
+<dictionaries>
+<comment>Необязательный элемент с любым содержимым. Игнорируется сервером ClickHouse.</comment>
+
+         <dictionary>
+         <name>month</name>
+         <source>
+            <clickhouse>
+            <host>85.143.172.199</host>
+            <port>9000</port>
+            <user>defaultx</user>
+            <password></password>
+            <db>CHdatabase</db>
+            <table>month_dict</table>
+            <where></where>
+            </clickhouse>
+         </source>
+         <layout>
+            <flat />
+         </layout>
+        
+    <structure>
+        <id>
+            <name>code</name>
+        </id>
+
+        <attribute>
+            <name>ru</name>
+            <type>String</type>
+            <null_value>none</null_value>
+        </attribute>
+        <attribute>
+            <name>eng</name>
+            <type>String</type>
+            <null_value>none</null_value>
+        </attribute>
+        <attribute>
+            <name>d</name>
+            <type>Date</type>
+            <null_value>2017-01-01</null_value>
+        </attribute>
+       
+
+    </structure>
+        <!-- Конфигурация словаря -->
+    <lifetime>300</lifetime>
+    </dictionary>
+    <dictionary>
+        <name>week</name>
+        <source>
+            <clickhouse>
+                <host>85.143.172.199</host>
+                <port>9000</port>
+                <user>default</user>
+                <password></password>
+                <db>CHdatabase</db>
+                <table>week_dict</table>
+                <where></where>
+            </clickhouse>
+        </source>
+        <layout>
+            <flat />
+        </layout>
+        <structure>
+        <id>
+            <name>code</name>
+        </id>
+
+        <attribute>
+            <name>ru</name>
+            <type>String</type>
+            <null_value>none</null_value>
+            <!-- Attribute parameters -->
+        </attribute>
+        <attribute>
+            <name>eng</name>
+            <type>String</type>
+            <null_value>none</null_value>
+        </attribute>
+        <attribute>
+            <name>d</name>
+            <type>Date</type>
+            <null_value>2017-01-01</null_value>
+        </attribute>
+    </structure>
+    <lifetime>300</lifetime>
+    </dictionary>
+</dictionaries>
